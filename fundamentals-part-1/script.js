@@ -181,3 +181,39 @@ const markHeigherBMI = BMImark > BMIjonh;
 
 console.log(BMImark, BMIjonh, markHeigherBMI);
 */
+
+/*
+//TEMPLATE STRING
+const firstName = "samir";
+const year = 2022;
+const birthYear = 2004;
+const job = "student";
+
+const samir =
+  "I'm " +
+  firstName +
+  ", a " +
+  (year - birthYear) +
+  "" +
+  " year old " +
+  job +
+  "!";
+
+console.log(samir);
+
+// TEMPLATE LITERALS
+const samirNew = `I'm ${firstName}, a ${year - birthYear}  year old  ${job} !`;
+
+console.log(samirNew);
+
+console.log(`just a regular string...`);
+
+// MULTILINE STRING
+console.log("string with \n\
+ multiple \n\
+ lines ");
+
+console.log(`string with
+ multiple
+ lines`);
+*/
