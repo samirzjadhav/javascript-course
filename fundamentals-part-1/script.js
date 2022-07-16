@@ -45,7 +45,7 @@ let javascriptIsFun = true;
 console.log(javascriptIsFun);
 
  console.log(typeof true);
-console.log(typeof javascriptIsFun);
+ console.log(typeof javascriptIsFun);
  console.log(typeof "jonas");
  console.log(typeof false);
  console.log(typeof 23);
@@ -114,11 +114,70 @@ console.log(ageSamir >= 20);
 const myFullAge = ageSamir >= 20
 
 console.log(now - 2004 > now - 2020)
-
 */
 
+/*
 const now = 2050;
 const ageSamir = now - 2004; // 2050 - 2004 = 46;
 const ageCuties = now - 2030; // 2050 - 2030 = 20;
 
 console.log(now - 2004 > now - 2020);
+
+let x, y;
+x = y = 25 - 10 - 5; // 25 - 10 - 5 = 10
+console.log(x, y);
+
+// const averageAge = ageSamir + ageCuties / 2;
+
+const averageAge = (ageSamir + ageCuties) / 2;
+
+console.log(ageSamir, ageCuties, averageAge);
+*/
+
+/*
+JavaScript Fundamentals – Part 1
+
+Coding Challenge #1
+
+Mark and John are trying to compare their BMI (Body Mass Index), which is
+calculated using the formula:
+
+BMI = mass / height ** 2 = mass / (height * height) (mass in kg
+and height in meter).
+
+Your tasks:
+
+1. Store Mark's and John's mass and height in variables
+
+2. Calculate both their BMIs using the formula (you can even implement both
+versions)
+
+3. Create a Boolean variable 'markHigherBMI' containing information about
+whether Mark has a higher BMI than John.
+
+Test data:
+
+§ Data 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95
+m tall.
+
+§ Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76
+m tall.
+*/
+
+/*
+// const markMass = 78;
+// const markHeight = 1.69;
+// const jonhMass = 92;
+// const jonhHeight = 1.95;
+
+const markMass = 95;
+const markHeight = 1.88;
+const jonhMass = 85;
+const jonhHeight = 1.76;
+
+const BMImark = markMass / markHeight ** 2;
+const BMIjonh = jonhMass / (jonhHeight * jonhHeight);
+const markHeigherBMI = BMImark > BMIjonh;
+
+console.log(BMImark, BMIjonh, markHeigherBMI);
+*/
