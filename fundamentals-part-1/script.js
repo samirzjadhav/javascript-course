@@ -299,8 +299,9 @@ n = n - 1;
 console.log(n);
 */
 
+/*
+// TRUTHY VALUE AND FALSY  VALUE 
 // 5 falsy value : 0, '', undefined, null, NaN, false
-
 console.log(Boolean(0));
 console.log(Boolean(undefined));
 console.log(Boolean("samir"));
@@ -321,3 +322,32 @@ if (height) {
 } else {
   console.log("Height is UNDEFINED");
 }
+*/
+
+/*
+//strick equality operator
+const age = 18;
+// const age ='18';
+if (age === 18) console.log("you just became an adult :) (strick)");
+
+// loose equality operator
+if (age == 18) console.log("you just became an adult :) (Loose)");
+
+const favourite = Number(prompt("What's your favourite number ?"));
+console.log(favourite);
+
+if (favourite === 23) {
+  // 22 === 23 -> FALSE
+  console.log("Cool! 23 is an amezing number!");
+} else if (favourite === 7) {
+  console.log(" 7 is also a cool number");
+} else if (favourite === 9) {
+  console.log(" 9 is also a cool number");
+} else {
+  console.log("number is not 23 or 7");
+}
+
+if (favourite !== 23) {
+  console.log("Why not 23?");
+}
+*/
