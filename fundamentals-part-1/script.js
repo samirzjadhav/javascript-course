@@ -257,6 +257,7 @@ Hint: Use an if/else statement 😉
 GOOD LUCK 😀
 */
 
+/*
 const BMImark = 28.3;
 const BMIjohn = 23.9;
 
@@ -265,3 +266,29 @@ if (BMImark < BMIjohn) {
 } else {
   console.log(`jonh's BMI(${BMIjohn}) is lower than Mark's(${BMImark}) !`);
 }
+*/
+
+//TYPE CONVERSION
+const inputYear = "2004";
+console.log(Number(inputYear), inputYear + 18);
+console.log(Number(inputYear) + 18);
+
+console.log(Number("samir"));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+//TYPE COERCION
+console.log("I am " + 18 + " year old");
+
+//STRING CONVERTED INTO NUMBER DECAUSE -
+console.log("23" - "10" - 3);
+
+//NUMBER CONVERTED INTO STRING BECAUSE +
+console.log("23" + "10" + 3);
+
+console.log("23" * "4");
+
+console.log("28" / "2");
+
+console.log("25" > "18");
