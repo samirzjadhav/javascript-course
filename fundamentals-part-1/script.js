@@ -351,3 +351,29 @@ if (favourite !== 23) {
   console.log("Why not 23?");
 }
 */
+/*
+//logical operator
+const hasDriverLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDriverLicense && hasGoodVision);
+console.log(hasDriverLicense || hasGoodVision);
+console.log(!hasDriverLicense);
+
+//const shouldDrive = hasDriverLicense && hasGoodVision;
+
+// if (hasDriverLicense && hasGoodVision) {
+//   console.log("sarah is able to drive!");
+// } else {
+//   console.log("someone else should drive...");
+// }
+
+const isTired = false;
+console.log(hasDriverLicense && hasGoodVision && isTired);
+
+if (hasDriverLicense && hasGoodVision && !isTired) {
+  console.log("sarah is able to drive!");
+} else {
+  console.log("someone else should drive...");
+}
+*/
