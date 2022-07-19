@@ -419,7 +419,6 @@ if (scoreDolphins > scoreKoalas) {
 } else if (scoreKoalas === scoreDolphins) {
   console.log("both win the trophy 🏆");
 }
-*/
 
 //BONUS 1
 const scoreDolphins = (96 + 108 + 89) / 3;
@@ -439,4 +438,45 @@ if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
   console.log("both win the trophy 🏆");
 } else {
   console.log("no one wins the trophy 😭");
+}
+*/
+
+const day = "monday";
+
+switch (day) {
+  case "monday":
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
+    break;
+  case "tuesday":
+    console.log("Prepare theory video");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Write code examoles");
+    break;
+  case "friday":
+    console.log("Record videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend :D");
+    break;
+  default:
+    console.log("Not a valid day!");
+}
+
+if (day === "monday") {
+  console.log("Plan course structure");
+  console.log("Go to coding meetup");
+} else if (day === "tuesday") {
+  console.log("Prepare theory video");
+} else if (day === "wednesday || thursday") {
+  console.log("Write code examoles");
+} else if (day === "friday") {
+  console.log("Record videos");
+} else if (day === "saturday || sunday") {
+  console.log("Enjoy the weekend :D");
+} else {
+  console.log("Not a valid day!");
 }
