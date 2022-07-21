@@ -38,3 +38,21 @@ console.log(appleOrangeJuice);
 
 const num = Number("23");
 */
+
+/*
+//FUNCTION DECLARATIONS
+function calcAge1(birthYear) {
+  return 2037 - birthYear;
+}
+
+const age1 = calcAge1(2004);
+console.log(age1);
+
+//FUNCTION EXPRESSIONS
+const calcAge2 = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const age2 = calcAge1(2002);
+console.log(age1, age2);
+*/
