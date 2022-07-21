@@ -74,3 +74,20 @@ console.log(yearUntilRetirement(2004, "samir"));
 console.log(yearUntilRetirement(2000, "sam"));
 console.log(yearUntilRetirement(1990, "ganesh"));
 */
+
+/*
+// FUNCTIONS CALLING OTHER FUNCTIONS
+const cutPieces = function (fruit) {
+  return fruit * 4;
+};
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutPieces(apples);
+  const orangPieces = cutPieces(oranges);
+
+  const juice = `juice with ${applePieces} pieces of apple and ${orangPieces} pieces of orange.`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 5));
+*/
