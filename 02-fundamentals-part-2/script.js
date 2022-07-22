@@ -179,3 +179,47 @@ scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphine, scoreKoalas);
 checkwinner(scoreDolphine, scoreKoalas);
 */
+/*
+//ARRAYS
+const friend1 = "samir";
+const friend2 = "amol";
+const friend3 = "ganesh";
+
+const friends = ["samir", "parish", "om"];
+console.log(friends);
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+// const year = new Array(1991, 1989, 1878, 1789);
+// console.log(year[1]);
+
+friends[2] = "sam";
+console.log(friends);
+//friends = ["janas", "sam"];
+
+const firstName = "samir";
+const samir = [firstName, "jadhav", 2022 - 2004, "student", friends];
+console.log(samir);
+
+//EXECRISE
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+const year = [1991, 1989, 1878, 1789, 1987];
+
+const age1 = calcAge(year[0]);
+const age2 = calcAge(year[1]);
+const age3 = calcAge(year[2]);
+const age4 = calcAge(year[year.lenght - 1]);
+console.log(age1, age2, age3, age4);
+
+const ages = [
+  calcAge(year[0]),
+  calcAge(year[1]),
+  calcAge(year[2]),
+  calcAge(year[3]),
+  calcAge(year[year.length - 1]),
+];
+
+console.log(ages);
+*/
