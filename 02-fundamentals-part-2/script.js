@@ -302,3 +302,26 @@ const tips = [calctip(bills[0]), calctip(bills[1]), calctip(bills[2])];
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills, tips, totals);
 */
+
+/*
+//INTRODUCTION TO OBJECTS
+const samirArray = [
+  "samir",
+  "jadhaw",
+  2022 - 2004,
+  "student",
+  ["mahesh, roshan, om "],
+];
+
+console.log(samirArray);
+
+const samir = {
+  firstName: "samir",
+  lastName: "jadhaw",
+  age: 2022 - 2004,
+  job: "student",
+  friends: ["mahesh, roshan, om "],
+};
+
+console.log(samir.firstName);
+*/
