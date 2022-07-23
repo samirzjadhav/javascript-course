@@ -341,3 +341,7 @@ console.log(samir["firstName"]);
 for (const key of Object.keys(samir)) {
   console.log(key + " is " + samir[key]);
 }
+
+const nameKey = "Name";
+console.log(samir["first" + nameKey]);
+console.log(samir["last" + nameKey]);
