@@ -349,6 +349,13 @@ console.log(samir["last" + nameKey]);
 //console.log(samir.'last'+nameKey)
 
 const interestedIn = prompt(
-  "what do you want to know about samir? firstName, lastName, age, job, friends"
+  "what do you want to know about samir? choose bewtween firstName, lastName, age, job, friends"
 );
-console.log(samir[interestedIn]);
+
+if (samir[interestedIn]) {
+  console.log(samir[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! choose bewtween firstName, lastName, age, job, friends"
+  );
+}
