@@ -332,9 +332,9 @@ const samir = {
   lastName: "jadhaw",
   age: 2022 - 2004,
   job: "student",
-  friends: ["mahesh, roshan, om "],
+  friends: ["mahesh", "roshan", "om "],
 };
-console.log(samir);
+console.log(samir.friends.length);
 console.log(samir.lastName);
 console.log(samir["firstName"]);
 
@@ -361,5 +361,11 @@ if (samir[interestedIn]) {
 }
 
 samir.location = "nagpur";
-janas["twitter"] = "@samirzjadhav";
+samir["twitter"] = "@samirzjadhav";
 console.log(samir);
+
+//CHALLENGES
+//'samir has 3 friends, and his bestfriend is called om '
+console.log(
+  `${samir.firstName} has ${samir.friends.length} friends, and his bestfriends is called ${samir.friends[2]}`
+);
