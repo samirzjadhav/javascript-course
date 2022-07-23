@@ -325,3 +325,19 @@ const samir = {
 
 console.log(samir.firstName);
 */
+
+//DOT OPERATOR
+const samir = {
+  firstName: "samir",
+  lastName: "jadhaw",
+  age: 2022 - 2004,
+  job: "student",
+  friends: ["mahesh, roshan, om "],
+};
+console.log(samir);
+console.log(samir.lastName);
+console.log(samir["firstName"]);
+
+for (const key of Object.keys(samir)) {
+  console.log(key + " is " + samir[key]);
+}
