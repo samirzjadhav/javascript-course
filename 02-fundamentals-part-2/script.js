@@ -359,3 +359,7 @@ if (samir[interestedIn]) {
     "Wrong request! choose bewtween firstName, lastName, age, job, friends"
   );
 }
+
+samir.location = "nagpur";
+janas["twitter"] = "@samirzjadhav";
+console.log(samir);
