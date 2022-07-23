@@ -345,3 +345,10 @@ for (const key of Object.keys(samir)) {
 const nameKey = "Name";
 console.log(samir["first" + nameKey]);
 console.log(samir["last" + nameKey]);
+
+//console.log(samir.'last'+nameKey)
+
+const interestedIn = prompt(
+  "what do you want to know about samir? firstName, lastName, age, job, friends"
+);
+console.log(samir[interestedIn]);
