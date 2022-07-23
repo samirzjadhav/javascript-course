@@ -179,6 +179,7 @@ scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphine, scoreKoalas);
 checkwinner(scoreDolphine, scoreKoalas);
 */
+
 /*
 //ARRAYS
 const friend1 = "samir";
@@ -222,4 +223,40 @@ const ages = [
 ];
 
 console.log(ages);
+*/
+/*
+//ARRAY VARIABLE
+const friends = ["samir", "mahesh", "om"];
+//ADD ELEMENTS
+friends.push("roshan");
+console.log(friends);
+
+friends.unshift("jonh");
+console.log(friends);
+
+//REMOVE ELEMENTS
+friends.pop();
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+//INDEXOF METHOD
+friends.shift();
+console.log(friends);
+console.log(friends.indexOf("mahesh"));
+console.log(friends.indexOf("bob"));
+
+//INCLUDES METHOD
+console.log(friends.includes("mahesh"));
+console.log(friends.includes("bob"));
+friends.push(23);
+console.log(friends.includes(23));
+console.log(friends.includes("23"));
+
+if (friends.includes("mahesh")) {
+  console.log("you have a friend called mahesh");
+}
+if (friends.includes("samir")) {
+  console.log("ypu have a friends called samir");
+}
 */
