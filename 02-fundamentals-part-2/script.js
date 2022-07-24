@@ -398,7 +398,7 @@ GOOD LUCK 😀
 // const jonhSmithBMI = 92 / 1.95 ** 2;
 // const markMillerBMI = 78 / 1.69 ** 2;
 // console.log(jonhSmithBMI, markMillerBMI);
-
+/*
 const mark = {
   fullName: "Mark Miller",
   mass: 78,
@@ -431,4 +431,22 @@ if (mark.bmi > jonh.bmi) {
   console.log(
     `${jonh.fullName}'s BMI ${jonh.bmi} is higher than ${mark.fullName}'s BMI ${mark.bmi}`
   );
+}
+*/
+
+//LOOP
+console.log("Lifting weight repetition 1 🏋️‍♂️");
+console.log("Lifting weight repetition 2 🏋️‍♂️");
+console.log("Lifting weight repetition 3 🏋️‍♂️");
+console.log("Lifting weight repetition 4 🏋️‍♂️");
+console.log("Lifting weight repetition 5 🏋️‍♂️");
+console.log("Lifting weight repetition 6 🏋️‍♂️");
+console.log("Lifting weight repetition 7 🏋️‍♂️");
+console.log("Lifting weight repetition 8 🏋️‍♂️");
+console.log("Lifting weight repetition 9 🏋️‍♂️");
+console.log("Lifting weight repetition 10 🏋️‍♂️");
+
+//for loop keeps running while condition is True
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weight repetition ${rep} 🏋️‍♂️`);
 }
