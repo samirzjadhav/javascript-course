@@ -433,7 +433,7 @@ if (mark.bmi > jonh.bmi) {
   );
 }
 */
-
+/*
 //LOOP
 console.log("Lifting weight repetition 1 🏋️‍♂️");
 console.log("Lifting weight repetition 2 🏋️‍♂️");
@@ -450,3 +450,30 @@ console.log("Lifting weight repetition 10 🏋️‍♂️");
 for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weight repetition ${rep} 🏋️‍♂️`);
 }
+*/
+
+//LOPPING ARRAYS,BREAKING AND CONTINUINGgit git
+const samir = [
+  "samir",
+  "jadhaw",
+  2022 - 2004,
+  "student",
+  ["mahesh, roshan, om "],
+  true,
+];
+const types = [];
+// console.log(samir[0]);
+// console.log(samir[1]);
+// ...
+// console.log(samir[4]);
+// samir[5] is NOT exist
+
+for (let i = 0; i < samir.length; i++) {
+  //Reading from samir array
+  console.log(samir[i], typeof samir[i]);
+
+  //Filling types array
+  types[i] = typeof samir[i];
+  types.push(typeof samir[i]);
+}
+console.log(types);
