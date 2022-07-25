@@ -1,10 +1,9 @@
-/*
 // ALERT SECTION
 
 let js = "amazing";
 if (js === "amazing") alert("javascript is FUN!");
 
-// STRING AND NUMBER 
+// STRING AND NUMBER
 
 console.log(34 + 45 + 5 - 13);
 console.log("samir");
@@ -20,11 +19,11 @@ console.log(firstName + " " + middleName + " " + lastName);
 console.log(lastName + " " + firstName + " " + middleName);
 
 // using array.prototype.join to join using spaces
- console.log([firstName, middleName, lastName].join(" "));
- console.log([firstName, middleName, lastName].reverse().join(" "));
+console.log([firstName, middleName, lastName].join(" "));
+console.log([firstName, middleName, lastName].reverse().join(" "));
 
 //  template strings
- console.log(`${firstName} ${middleName} ${lastName}`);
+console.log(`${firstName} ${middleName} ${lastName}`);
 
 let myFirstJob = "programmer";
 let myCurrentJob = "teacher";
@@ -37,25 +36,21 @@ console.log(myCurrentJob);
 
 let person = "jonas";
 let PI = 23.435;
-*/
 
-/*
 // BOOLEAN
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
 
- console.log(typeof true);
- console.log(typeof javascriptIsFun);
- console.log(typeof "jonas");
- console.log(typeof false);
- console.log(typeof 23);
+console.log(typeof true);
+console.log(typeof javascriptIsFun);
+console.log(typeof "jonas");
+console.log(typeof false);
+console.log(typeof 23);
 
-// THIS IS DYNAMIC TYPING 
+// THIS IS DYNAMIC TYPING
 javascriptIsFun = "YES!";
 console.log(typeof javascriptIsFun);
-*/
 
-/*
 // UNDEFINED
 let year;
 console.log(year);
@@ -83,9 +78,7 @@ brthYear = 2003;
 // NO DECLERATION
 firstName = "samir";
 console.log(firstName);
-*/
 
-/*
 // MATHEMATICALL AND ARITHAMATIC OPERATORS
 // MATH OPERATOR
 const now = 2050;
@@ -111,12 +104,10 @@ console.log(ageSamir < ageCuties);
 console.log(ageSamir < x);
 console.log(ageSamir >= 20);
 
-const myFullAge = ageSamir >= 20
+const myFullAge = ageSamir >= 20;
 
-console.log(now - 2004 > now - 2020)
-*/
+console.log(now - 2004 > now - 2020);
 
-/*
 const now = 2050;
 const ageSamir = now - 2004; // 2050 - 2004 = 46;
 const ageCuties = now - 2030; // 2050 - 2030 = 20;
@@ -132,7 +123,6 @@ console.log(x, y);
 const averageAge = (ageSamir + ageCuties) / 2;
 
 console.log(ageSamir, ageCuties, averageAge);
-*/
 
 /*
 JavaScript Fundamentals – Part 1
@@ -164,11 +154,10 @@ m tall.
 m tall.
 */
 
-/*
-// const markMass = 78;
-// const markHeight = 1.69;
-// const jonhMass = 92;
-// const jonhHeight = 1.95;
+const markMass = 78;
+const markHeight = 1.69;
+const jonhMass = 92;
+const jonhHeight = 1.95;
 
 const markMass = 95;
 const markHeight = 1.88;
@@ -180,9 +169,7 @@ const BMIjonh = jonhMass / (jonhHeight * jonhHeight);
 const markHeigherBMI = BMImark > BMIjonh;
 
 console.log(BMImark, BMIjonh, markHeigherBMI);
-*/
 
-/*
 //TEMPLATE STRING
 const firstName = "samir";
 const year = 2022;
@@ -216,9 +203,7 @@ console.log("string with \n\
 console.log(`string with
  multiple
  lines`);
-*/
 
-/*
 //IF AND ELSE CONTROLS STRACTURE
 const age = 18;
 if (age >= 18) {
@@ -236,7 +221,6 @@ if (birthYear <= 2000) {
   century = 21;
 }
 console.log(century);
-*/
 
 /*
 Coding Challenge #2
@@ -257,7 +241,6 @@ Hint: Use an if/else statement 😉
 GOOD LUCK 😀
 */
 
-/*
 const BMImark = 28.3;
 const BMIjohn = 23.9;
 
@@ -266,9 +249,7 @@ if (BMImark < BMIjohn) {
 } else {
   console.log(`jonh's BMI(${BMIjohn}) is lower than Mark's(${BMImark}) !`);
 }
-*/
 
-/*
 //TYPE CONVERSION
 const inputYear = "2004";
 console.log(Number(inputYear), inputYear + 18);
@@ -297,10 +278,8 @@ console.log("25" > "18");
 let n = "1" + 1; // 11
 n = n - 1;
 console.log(n);
-*/
 
-/*
-// TRUTHY VALUE AND FALSY  VALUE 
+// TRUTHY VALUE AND FALSY  VALUE
 // 5 falsy value : 0, '', undefined, null, NaN, false
 console.log(Boolean(0));
 console.log(Boolean(undefined));
@@ -322,9 +301,7 @@ if (height) {
 } else {
   console.log("Height is UNDEFINED");
 }
-*/
 
-/*
 //strick equality operator
 const age = 18;
 // const age ='18';
@@ -350,8 +327,7 @@ if (favourite === 23) {
 if (favourite !== 23) {
   console.log("Why not 23?");
 }
-*/
-/*
+
 //logical operator
 const hasDriverLicense = true;
 const hasGoodVision = true;
@@ -360,13 +336,13 @@ console.log(hasDriverLicense && hasGoodVision);
 console.log(hasDriverLicense || hasGoodVision);
 console.log(!hasDriverLicense);
 
-//const shouldDrive = hasDriverLicense && hasGoodVision;
+const shouldDrive = hasDriverLicense && hasGoodVision;
 
-// if (hasDriverLicense && hasGoodVision) {
-//   console.log("sarah is able to drive!");
-// } else {
-//   console.log("someone else should drive...");
-// }
+if (hasDriverLicense && hasGoodVision) {
+  console.log("sarah is able to drive!");
+} else {
+  console.log("someone else should drive...");
+}
 
 const isTired = false;
 console.log(hasDriverLicense && hasGoodVision && isTired);
@@ -376,7 +352,6 @@ if (hasDriverLicense && hasGoodVision && !isTired) {
 } else {
   console.log("someone else should drive...");
 }
-*/
 
 /*
 Coding Challenge #3
@@ -406,7 +381,6 @@ Test data:
 GOOD LUCK 😀
 */
 
-/*
 const scoreDolphins = (96 + 108 + 89) / 3;
 const scoreKoalas = (88 + 91 + 110) / 3;
 
@@ -439,9 +413,7 @@ if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
 } else {
   console.log("no one wins the trophy 😭");
 }
-*/
 
-/*
 //SWITCH STATEMENT
 const day = "monday";
 
@@ -482,9 +454,7 @@ if (day === "monday") {
 } else {
   console.log("Not a valid day!");
 }
-*/
 
-/*
 //CONDITIONAL (TERNARY) OPERATOR
 const age = 17;
 age >= 18
@@ -503,8 +473,6 @@ if (age >= 18) {
 console.log(drink2);
 
 console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`);
-
-*/
 
 /*
 Coding Challenge #4
@@ -533,9 +501,8 @@ Hints:
 
 GOOD LUCK 😀
 */
-/*
+
 const bill = 275;
 const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
 console.log(`The bill was ${bill}, the tip was ${tip}, and the total value
 ${bill + tip}`);
-*/
