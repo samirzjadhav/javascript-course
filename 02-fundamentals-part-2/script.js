@@ -514,3 +514,12 @@ const samir = [
 for (let i = samir.length - 1; i >= 0; i--) {
   console.log(i, samir[i]);
 }
+
+//LOPPING IN LOOPS
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`---Starting Execrcise ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`exercise: ${exercise} Lifting weight repetition ${rep}🏋🏻`);
+  }
+}
