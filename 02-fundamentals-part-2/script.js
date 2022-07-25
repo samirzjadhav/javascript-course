@@ -452,6 +452,7 @@ for (let rep = 1; rep <= 10; rep++) {
 }
 */
 
+/*
 //LOPPING ARRAYS,BREAKING AND CONTINUINGgit git
 const samir = [
   "samir",
@@ -497,4 +498,19 @@ console.log("--- BREAK WITH NUMBER ---");
 for (let i = 0; i < samir.length; i++) {
   if (typeof samir[i] === "number") break;
   console.log(samir[i], typeof samir[i]);
+}
+*/
+
+//LOPPING BACKWARDS AND LOPPING IN LOOPS
+const samir = [
+  "samir",
+  "jadhaw",
+  2022 - 2004,
+  "student",
+  ["mahesh, roshan, om "],
+];
+
+//LOPPING BACKWARDS
+for (let i = samir.length - 1; i >= 0; i--) {
+  console.log(i, samir[i]);
 }
