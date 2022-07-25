@@ -501,6 +501,7 @@ for (let i = 0; i < samir.length; i++) {
 }
 */
 
+/*
 //LOPPING BACKWARDS AND LOPPING IN LOOPS
 const samir = [
   "samir",
@@ -522,4 +523,17 @@ for (let exercise = 1; exercise < 4; exercise++) {
   for (let rep = 1; rep < 6; rep++) {
     console.log(`exercise: ${exercise} Lifting weight repetition ${rep}🏋🏻`);
   }
+}
+*/
+
+//THE WHILE LOOP
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weight repetition ${rep}🏋🏻`);
+}
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`While: Lifting weight repetition ${rep}🏋🏻`);
+  rep++;
 }
