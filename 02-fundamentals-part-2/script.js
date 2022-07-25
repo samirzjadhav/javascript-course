@@ -1,4 +1,3 @@
-/*
 // ACTIVETING STRICT MODE
 "use strict";
 
@@ -13,9 +12,7 @@ if (hasDriversLicense) console.log("I can Drive :D");
 //const if = 234;
 
 // console.log(interface, private);
-*/
 
-/*
 //FUNCTION
 function logger() {
   console.log("My name is Samir");
@@ -37,9 +34,7 @@ const appleOrangeJuice = fruitProcessor(2, 4);
 console.log(appleOrangeJuice);
 
 const num = Number("23");
-*/
 
-/*
 //FUNCTION DECLARATIONS
 function calcAge1(birthYear) {
   return 2037 - birthYear;
@@ -55,9 +50,7 @@ const calcAge2 = function (birthYear) {
 
 const age2 = calcAge1(2002);
 console.log(age1, age2);
-*/
 
-/*
 //ARROW FUNCTION
 const calsAge3 = (birthYear) => 2022 - birthYear;
 const age3 = calsAge3(2004);
@@ -73,9 +66,7 @@ const yearUntilRetirement = (birthYear, firstName) => {
 console.log(yearUntilRetirement(2004, "samir"));
 console.log(yearUntilRetirement(2000, "sam"));
 console.log(yearUntilRetirement(1990, "ganesh"));
-*/
 
-/*
 // FUNCTIONS CALLING OTHER FUNCTIONS
 const cutPieces = function (fruit) {
   return fruit * 4;
@@ -90,9 +81,7 @@ function fruitProcessor(apples, oranges) {
 }
 
 console.log(fruitProcessor(2, 5));
-*/
 
-/*
 const calcAge = function (birthYear) {
   return 2037 - birthYear;
 };
@@ -112,7 +101,6 @@ const yearUntilRetirement = function (birthYear, firstName) {
 };
 
 console.log(yearUntilRetirement(1970, "samir"));
-*/
 
 /*
 JavaScript Fundamentals – Part 2
@@ -152,7 +140,7 @@ Apply this to the team's average scores 😉
 
 GOOD LUCK 😀
 */
-/*
+
 const calcAverage = (a, b, c) => (a + b + c) / 3;
 console.log(calcAverage(3, 7, 5));
 
@@ -178,9 +166,7 @@ scoreDolphine = calcAverage(85, 54, 41);
 scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphine, scoreKoalas);
 checkwinner(scoreDolphine, scoreKoalas);
-*/
 
-/*
 //ARRAYS
 const friend1 = "samir";
 const friend2 = "amol";
@@ -223,8 +209,7 @@ const ages = [
 ];
 
 console.log(ages);
-*/
-/*
+
 //ARRAY VARIABLE
 const friends = ["samir", "mahesh", "om"];
 //ADD ELEMENTS
@@ -259,7 +244,6 @@ if (friends.includes("mahesh")) {
 if (friends.includes("samir")) {
   console.log("ypu have a friends called samir");
 }
-*/
 
 // Coding Challenge #2
 
@@ -290,7 +274,7 @@ array) 😉
 
 GOOD LUCK 😀
 */
-/*
+
 const calctip = function (bill) {
   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 };
@@ -301,9 +285,7 @@ const bills = [125, 555, 44];
 const tips = [calctip(bills[0]), calctip(bills[1]), calctip(bills[2])];
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills, tips, totals);
-*/
 
-/*
 //INTRODUCTION TO OBJECTS
 const samirArray = [
   "samir",
@@ -324,9 +306,7 @@ const samir = {
 };
 
 console.log(samir.firstName);
-*/
 
-/*
 //DOT OPERATOR
 const samir = {
   firstName: "samir",
@@ -370,7 +350,6 @@ console.log(samir);
 console.log(
   `${samir.firstName} has ${samir.friends.length} friends, and his bestfriends is called ${samir.friends[2]}`
 );
-*/
 
 /*
 //CODING CHALLANGE NO 3
@@ -398,7 +377,7 @@ GOOD LUCK 😀
 // const jonhSmithBMI = 92 / 1.95 ** 2;
 // const markMillerBMI = 78 / 1.69 ** 2;
 // console.log(jonhSmithBMI, markMillerBMI);
-/*
+
 const mark = {
   fullName: "Mark Miller",
   mass: 78,
@@ -432,8 +411,7 @@ if (mark.bmi > jonh.bmi) {
     `${jonh.fullName}'s BMI ${jonh.bmi} is higher than ${mark.fullName}'s BMI ${mark.bmi}`
   );
 }
-*/
-/*
+
 //LOOP
 console.log("Lifting weight repetition 1 🏋️‍♂️");
 console.log("Lifting weight repetition 2 🏋️‍♂️");
@@ -450,9 +428,7 @@ console.log("Lifting weight repetition 10 🏋️‍♂️");
 for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weight repetition ${rep} 🏋️‍♂️`);
 }
-*/
 
-/*
 //LOPPING ARRAYS,BREAKING AND CONTINUINGgit git
 const samir = [
   "samir",
@@ -499,9 +475,7 @@ for (let i = 0; i < samir.length; i++) {
   if (typeof samir[i] === "number") break;
   console.log(samir[i], typeof samir[i]);
 }
-*/
 
-/*
 //LOPPING BACKWARDS AND LOPPING IN LOOPS
 const samir = [
   "samir",
@@ -524,9 +498,7 @@ for (let exercise = 1; exercise < 4; exercise++) {
     console.log(`exercise: ${exercise} Lifting weight repetition ${rep}🏋🏻`);
   }
 }
-*/
 
-/*
 //THE WHILE LOOP
 
 for (let rep = 1; rep <= 10; rep++) {
@@ -545,7 +517,6 @@ while (dice !== 6) {
   dice = Math.trunc(Math.random() * 6) + 1;
   if (dice === 6) console.log(`loop is about to end...`);
 }
-*/
 
 /*
 // Coding Challenge #4
