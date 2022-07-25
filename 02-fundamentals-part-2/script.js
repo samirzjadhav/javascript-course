@@ -485,3 +485,16 @@ for (let i = 0; i < years.length; i++) {
   ages.push(2037 - years[i]);
 }
 console.log(ages);
+
+//CONTINUE AND BREAK
+console.log("--- CONTINUE ONLY STRING ---");
+for (let i = 0; i < samir.length; i++) {
+  if (typeof samir[i] !== "string") continue;
+  console.log(samir[i], typeof samir[i]);
+}
+
+console.log("--- BREAK WITH NUMBER ---");
+for (let i = 0; i < samir.length; i++) {
+  if (typeof samir[i] === "number") break;
+  console.log(samir[i], typeof samir[i]);
+}
