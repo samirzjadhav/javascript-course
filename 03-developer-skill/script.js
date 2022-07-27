@@ -61,3 +61,29 @@ const calcTempAmplitudeNew = function (t1, t2) {
 };
 const amplitudeNew = calcTempAmplitudeNew([2, 4, 5, 8], [2, 4, 5, 6]);
 console.log(amplitudeNew);
+
+// Debugging section
+const measureKelvin = function () {
+  //prompt function always return a string😂
+  //no matter what we input into promptn window.
+  //It will always just be a string
+  const measurement = {
+    type: "temp",
+    unit: "celsius",
+    //C)FIX
+    //value: prompt("Degree celsius"),
+    value: Number(prompt("Degree celsius")),
+  };
+
+  //B)FIND
+  console.table(measurement);
+  // console.log(measurement);
+  // console.log(measurement.value);
+  // console.warn(measurement.value);
+  // console.error(measurement.value);
+
+  const kelvin = measurement.value + 275;
+  return kelvin;
+};
+//A)INDENTIFY
+console.log(measureKelvin());
