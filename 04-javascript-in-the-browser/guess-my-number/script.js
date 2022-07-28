@@ -19,14 +19,17 @@ document.querySelector(".number").textContent = secretNumber;
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
   console.log(guess, typeof guess);
-  //if undifined
+  //when there is no input
   if (!guess) {
     document.querySelector(".massage").textContent = "⛔ No number!";
   }
-  //if guess correct number
+  //if guess correct number its win
   else if (guess === secretNumber) {
     document.querySelector(".message").textContent = "🎉 Correct Number!";
-  } //if guess number too high
+    document.querySelector("body").style.backgroundColor = "#60b347";
+    document.querySelector(".number").style.width = "30rem";
+  }
+  //if guess number too high
   else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector(".message").textContent = "📈 Too high!";
