@@ -120,13 +120,13 @@ h1 {
 
 @media only screen and (max-width: 500px) {
   main {
-    height: 65vh;
+    height: 78vh;
     flex-direction: column-reverse;
     justify-content: center;
   }
 
   header {
-    height: 50vh;
+    height: 66vh;
   }
 
   .left {
