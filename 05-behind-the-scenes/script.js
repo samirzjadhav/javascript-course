@@ -35,6 +35,7 @@ const firstName = 'jonas';
 calAge(1991);
 */
 
+/*
 //Variables
 console.log(me);
 // console.log(job);
@@ -64,7 +65,6 @@ var addArrow = (a, b) => a + b;
 console.log(numProducts);
 
 if (!numProducts) deleteShopingCart();
-
 var numProducts = 10;
 
 function deleteShopingCart() {
@@ -78,3 +78,40 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
+*/
+
+//THIS KEYWORD
+
+console.log(this);
+
+const calAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calAge(2004);
+
+const calAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calAgeArrow(2006);
+
+const jonas = {
+  year: 2004,
+  calAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+calAge();
+
+// Brrowed method
+const matila = {
+  year: 2008,
+};
+
+matila.calAge = jonas.calAge;
+matila.calAge();
+
+const f = jonas.calAge;
+f();
