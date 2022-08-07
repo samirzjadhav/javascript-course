@@ -151,3 +151,34 @@ const jonas = {
 jonas.greet();
 jonas.calAge();
 
+// Arguments Keyword
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 3, 5, 16);
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 3, 5);
+
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'jonas',
+  age: 30,
+};
+const friend = me;
+friend.age = 29;
+
+console.log('Me', me);
+console.log('Friend:', friend);
