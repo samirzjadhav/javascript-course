@@ -1,6 +1,5 @@
 'use strict';
 
-
 function calAge(birthYear) {
   const age = 2037 - birthYear;
 
@@ -182,3 +181,41 @@ friend.age = 29;
 
 console.log('Me', me);
 console.log('Friend:', friend);
+
+
+// Primitives vs Objects
+//primitives type
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Devis';
+console.log(lastName, oldLastName);
+
+//reference type
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 25,
+};
+
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Devis';
+
+console.log('Before marriage:', jessica);
+console.log('After marriage:', marriedJessica);
+
+//Copping objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Devis';
+
+jessicaCopy.family.push('Jonh');
+jessicaCopy.family.push('Mary');
+
+console.log('Before marriage:', jessica2);
+console.log('After marriage:', jessicaCopy);
