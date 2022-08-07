@@ -1,6 +1,6 @@
 'use strict';
 
-/*
+
 function calAge(birthYear) {
   const age = 2037 - birthYear;
 
@@ -33,9 +33,7 @@ function calAge(birthYear) {
 
 const firstName = 'jonas';
 calAge(1991);
-*/
 
-/*
 //Variables
 console.log(me);
 // console.log(job);
@@ -78,9 +76,8 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
-*/
 
-/*
+
 //THIS KEYWORD
 
 console.log(this);
@@ -116,7 +113,7 @@ matila.calAge();
 
 const f = jonas.calAge;
 f();
-*/
+
 
 //Regular Function vs Arrow Function
 
@@ -154,17 +151,3 @@ const jonas = {
 jonas.greet();
 jonas.calAge();
 
-// Arguments Keyword
-
-const addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b;
-};
-addExpr(2, 5);
-addExpr(2, 3, 5, 16);
-
-var addArrow = (a, b) => {
-  console.log(arguments);
-  return a + b;
-};
-addArrow(2, 3, 5);
