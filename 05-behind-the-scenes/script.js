@@ -80,6 +80,7 @@ console.log(y === window.y);
 console.log(z === window.z);
 */
 
+/*
 //THIS KEYWORD
 
 console.log(this);
@@ -115,3 +116,55 @@ matila.calAge();
 
 const f = jonas.calAge;
 f();
+*/
+
+//Regular Function vs Arrow Function
+
+//var firstName = 'samir';
+const jonas = {
+  firstName: 'samir',
+  year: 1991,
+  calAge: function () {
+    console.log(2037 - this.year);
+
+    SOLUTION 1
+    const self = this; // self or that
+    const isMillenial = function () {
+      console.log(self);
+      console.log(self.year >= 1991 && self.year <= 1996);
+      // console.log(this);
+      //console.log(this.year >= 1991 && this.year <= 1996);
+    };
+    isMillenial();
+
+    //SOLUTION 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+
+  // greet: () => console.log(`hey ${this.firstName}`),
+
+  greet: () => {
+    console.log(`hey ${this.firstName}`);
+  },
+};
+jonas.greet();
+jonas.calAge();
+
+// Arguments Keyword
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 3, 5, 16);
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 3, 5);
