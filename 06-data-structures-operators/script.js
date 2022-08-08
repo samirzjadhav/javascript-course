@@ -64,3 +64,8 @@ const nested = [2, 3, [4, 5]];
 //const [i, , j] = nested;
 const [i, , [j, k]] = nested;
 console.log(i, j, k);
+
+//Default values
+//const [p, q, r] = [2, 3];
+const [p = 1, q = 1, r = 1] = [9, 2];
+console.log(p, q, r);
