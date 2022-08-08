@@ -27,3 +27,17 @@ const restaurant = {
     },
   },
 };
+
+const arr = [2, 3, 4];
+const a = [0];
+const b = [1];
+const c = [2];
+
+const [x, y, z] = arr;
+console.log([x, y, z]);
+
+const [first, , second] = restaurant.categories;
+console.log(first, second);
+
+const [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
