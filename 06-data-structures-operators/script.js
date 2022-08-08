@@ -11,10 +11,6 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -29,8 +25,35 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 };
 
+// Object destructuring
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Default value
+const { menu = [], starterMenu: starter = [] } = restaurant;
+console.log(menu, starter);
+
+//Mutating value
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 55, c: 45 };
+({ a, b } = obj);
+console.log(a, b);
+
+/*
 const arr = [2, 3, 4];
 const a = [0];
 const b = [1];
@@ -69,3 +92,4 @@ console.log(i, j, k);
 //const [p, q, r] = [2, 3];
 const [p = 1, q = 1, r = 1] = [9, 2];
 console.log(p, q, r);
+*/
