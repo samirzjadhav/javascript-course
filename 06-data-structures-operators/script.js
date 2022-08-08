@@ -11,6 +11,7 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
   openingHours: {
     thu: {
       open: 12,
@@ -29,7 +30,34 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  // orderDelivery: function (obj) {
+  //   console.log(obj);
+  // },
+
+  //Delivery section
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:30',
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
+restaurant.orderDelivery({
+  time: '2:30',
+  address: 'chotibori ward no.2',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  starterIndex: 1,
+  address: 'butibori ward no.4',
+});
 
 // Object destructuring
 const { name, openingHours, categories } = restaurant;
@@ -53,7 +81,12 @@ const obj = { a: 23, b: 55, c: 45 };
 ({ a, b } = obj);
 console.log(a, b);
 
-/*
+//Nested objects
+const {
+  fri: { open = o, close = c },
+} = openingHours;
+console.log(o, c);
+
 const arr = [2, 3, 4];
 const a = [0];
 const b = [1];
@@ -92,4 +125,3 @@ console.log(i, j, k);
 //const [p, q, r] = [2, 3];
 const [p = 1, q = 1, r = 1] = [9, 2];
 console.log(p, q, r);
-*/
