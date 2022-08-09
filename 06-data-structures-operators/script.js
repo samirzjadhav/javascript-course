@@ -54,7 +54,35 @@ const restaurant = {
   },
 };
 
-// Spread operator
+//Rest pattern and parameters
+
+// 1) DESTRUCTURING
+//Spread, because on RIGHT side of =
+const arr = [1, 2, 3, [4, 5]];
+
+//REST, because on LEFT side of =
+const [a, b, ...other] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, other);
+
+const [pizza, , risotto, ...otherfood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherfood);
+
+//Object rest pattern
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+//1) FUNCTIONS
+const add = function (...numbers) {
+  console.log(numbers);
+};
+add(1, 2, 3, 4);
+add(5, 6, 7);
+add(8, 9, 10);
+
+// Spread operator (...)
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
