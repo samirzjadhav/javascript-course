@@ -52,6 +52,11 @@ const restaurant = {
       `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredient) {
+    console.log(mainIngredient);
+    console.log(otherIngredient);
+  },
 };
 
 //Rest pattern and parameters
@@ -76,11 +81,20 @@ console.log(weekdays);
 
 //1) FUNCTIONS
 const add = function (...numbers) {
-  console.log(numbers);
+  // console.log(numbers);
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
 };
+
 add(1, 2, 3, 4);
 add(5, 6, 7);
 add(8, 9, 10);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 
 // Spread operator (...)
 const arr = [7, 8, 9];
