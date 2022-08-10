@@ -59,6 +59,21 @@ const restaurant = {
   },
 };
 
+// Use ANY data Type, return Any data type, short-circuiting
+console.log(3 || 'jonas');
+console.log('jonas' || 3 || 34);
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '' || 'hello' || 23 || null);
+
+//restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+/*
 //Rest pattern and parameters
 
 // 1) DESTRUCTURING
@@ -230,3 +245,4 @@ console.log(i, j, k);
 //const [p, q, r] = [2, 3];
 const [p = 1, q = 1, r = 1] = [9, 2];
 console.log(p, q, r);
+*/
