@@ -59,6 +59,16 @@ const restaurant = {
   },
 };
 
+// Nullish coalescing operator
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// Nullish: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+/*
 // ---- OR OPERATOR ----
 // Use ANY data Type, return Any data type, short-circuiting
 console.log('--- OR ---');
@@ -81,7 +91,7 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-/*
+
 //restaurant.numGuests = 23;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
