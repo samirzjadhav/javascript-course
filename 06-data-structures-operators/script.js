@@ -59,13 +59,29 @@ const restaurant = {
   },
 };
 
+// ---- OR OPERATOR ----
 // Use ANY data Type, return Any data type, short-circuiting
+console.log('--- OR ---');
 console.log(3 || 'jonas');
 console.log('jonas' || 3 || 34);
 console.log(true || 0);
 console.log(undefined || null);
 console.log(undefined || 0 || '' || 'hello' || 23 || null);
 
+// --- AND OPERATOR ----
+console.log('--- AND ----');
+console.log(0 && 'jonas');
+console.log(23 && 'samir');
+console.log('hello' && 23 && null && 'jonas');
+
+// practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+/*
 //restaurant.numGuests = 23;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
@@ -73,7 +89,6 @@ console.log(guests1);
 const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
 
-/*
 //Rest pattern and parameters
 
 // 1) DESTRUCTURING
