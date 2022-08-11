@@ -59,6 +59,38 @@ const restaurant = {
   },
 };
 
+//Logical assigment operator
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'la piazza',
+  owner: 'roshan gupta',
+};
+
+// OR assignment operator
+rest1.numGuests = rest1.numGuests || 10;
+rest2.numGuests = rest2.numGuests || 10;
+
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+
+//Nullish assignment operator (null and undifined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+//AND assignment operator
+rest1.owner = rest1.owner && '<ANONYMOUS>';
+rest2.owner = rest2.owner && '<ANONYMOUS>';
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
+
+
 // Nullish coalescing operator
 restaurant.numGuests = 0;
 const guests = restaurant.numGuests || 10;
@@ -68,7 +100,6 @@ console.log(guests);
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect);
 
-/*
 // ---- OR OPERATOR ----
 // Use ANY data Type, return Any data type, short-circuiting
 console.log('--- OR ---');
