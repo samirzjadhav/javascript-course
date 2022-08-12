@@ -59,6 +59,17 @@ const restaurant = {
   },
 };
 
+//Looping arrays: the for-of loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  //console.log(`${item[0] + 1}:${item[1]}`);
+  console.log(`${i + 1}: ${el}`);
+}
+
+//console.log([...menu.entries()]);
+
 /*
 //Logical assigment operator
 const rest1 = {
