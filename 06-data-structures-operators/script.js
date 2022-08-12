@@ -59,6 +59,7 @@ const restaurant = {
   },
 };
 
+/*
 //Logical assigment operator
 const rest1 = {
   name: 'Capri',
@@ -89,7 +90,6 @@ rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest1);
 console.log(rest2);
-
 
 // Nullish coalescing operator
 restaurant.numGuests = 0;
