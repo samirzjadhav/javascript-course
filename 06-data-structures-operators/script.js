@@ -111,6 +111,14 @@ for (const day of days) {
 console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
 console.log(restaurant.orderRotten?.(0, 1) ?? 'Method does not exist');
 
+//Arrays
+//const users = [];
+const users = [{ name: 'jonas', email: 'hello@gmail.com' }];
+console.log(users[0]?.email ?? 'user empty array');
+
+if (users.length > 0) console.log(users[0].email);
+else console.log('user array empty');
+
 /*
 //Looping arrays: the for-of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
