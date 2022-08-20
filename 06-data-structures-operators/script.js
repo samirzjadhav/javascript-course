@@ -94,13 +94,45 @@ const restaurant = {
   },
 };
 
+const ordersSet = new Set([
+  'pasta',
+  'pizza',
+  'pizza',
+  'risotto',
+  'risotto',
+  'pasta',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('jonas'));
+console.log(ordersSet.size);
+console.log(ordersSet.has('pizza'));
+console.log(ordersSet.has('bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('risotto');
+//ordersSet.clear();
+console.log(ordersSet);
+
+//for loop sets
+for (const order of ordersSet) console.log(order);
+//Example
+const staff = ['waiter', 'manager', 'chef', 'waiter', 'chef'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(new Set(['waiter', 'manager', 'chef', 'waiter', 'chef']).size);
+
+console.log(new Set('samirjadhaw').size);
+
+/*
 console.log(`we are open on ${properties}`);
 
 for (const day of Object.keys(openingHours)) {
   console.log(day);
 }
 
-/*
 if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open);
 
