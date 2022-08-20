@@ -94,6 +94,13 @@ const restaurant = {
   },
 };
 
+console.log(`we are open on ${properties}`);
+
+for (const day of Object.keys(openingHours)) {
+  console.log(day);
+}
+
+/*
 if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open);
 
@@ -119,7 +126,7 @@ console.log(users[0]?.email ?? 'user empty array');
 if (users.length > 0) console.log(users[0].email);
 else console.log('user array empty');
 
-/*
+
 //Looping arrays: the for-of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const item of menu) console.log(item);
