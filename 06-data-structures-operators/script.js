@@ -94,6 +94,7 @@ const restaurant = {
   },
 };
 
+/*
 //Maps Fundamentals
 const rest = new Map();
 rest.set('name', 'Classica Italioo');
@@ -160,7 +161,6 @@ console.log([...question]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
 
-/*
 const ordersSet = new Set([
   'pasta',
   'pizza',
