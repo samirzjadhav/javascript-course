@@ -94,6 +94,47 @@ const restaurant = {
   },
 };
 
+// Working with string - part- 1
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(airline[0]);
+console.log(plane[0]);
+
+console.log(airline.length);
+console.log('B342'.length);
+
+console.log(airline.indexOf('o'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+
+//The length of the extracted string is always going to end minus beginning (7-4 = 3 )
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMIddleSeat = function (seat) {
+  // B and E are middle seat
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('you got the middle seat 😬');
+  } else {
+    console.log('you got lucky');
+  }
+};
+checkMIddleSeat('11B');
+checkMIddleSeat('23C');
+checkMIddleSeat('3E');
+
+console.log(new String('Jonas'));
+console.log(typeof new String('Jonas'));
+console.log(typeof new String('Jonas').slice(1));
+
 /*
 //Maps Fundamentals
 const rest = new Map();
