@@ -94,6 +94,64 @@ const restaurant = {
   },
 };
 
+const airline = 'TAP Air Portugal';
+console.log(airline.toLocaleLowerCase());
+console.log(airline.toLocaleUpperCase());
+
+// Fix Capitalization in name
+const passenger = 'jOnAS';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing emails
+const email = 'hello@samir.io';
+const loginEmail = '  Hello@samir.Io  \n';
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+
+console.log(trimmedEmail);
+
+// Best ways to normalized
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// relacing
+const priceGB = '288,97$';
+const priceUS = priceGB.replace('$', '@').replace(',', '.');
+console.log(priceUS);
+
+const announcement = 'ALL passangers come boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement.replace(/door/g, 'gate'));
+
+//Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('boinf'));
+console.log(plane.startsWith('Air'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+//Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('you are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+checkBaggage('I have a laptop, some Food and a Pocket Knife');
+checkBaggage('Socks and  camera');
+checkBaggage('Got some snacks and gun for protection');
+
+/*
 // Working with string - part- 1
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
@@ -135,7 +193,7 @@ console.log(new String('Jonas'));
 console.log(typeof new String('Jonas'));
 console.log(typeof new String('Jonas').slice(1));
 
-/*
+
 //Maps Fundamentals
 const rest = new Map();
 rest.set('name', 'Classica Italioo');
