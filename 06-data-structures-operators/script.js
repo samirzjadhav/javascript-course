@@ -94,6 +94,57 @@ const restaurant = {
   },
 };
 
+// Working with string - part - 3
+console.log('a+very+nice+string'.split('+'));
+console.log('Samir Jadhaw'.split(' '));
+
+const [firstName, lastName] = 'Samir Jadhaw'.split(' ');
+console.log([firstName, lastName]);
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalization = function (name) {
+  const names = name.split(' ');
+  const nameUpper = [];
+
+  for (const n of names) {
+    // nameUpper.push(n[0].toUpperCase() + n.slice(1));
+    nameUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(nameUpper.join(' '));
+};
+
+capitalization('samir om roshan ganesh yash');
+capitalization('samir jadhaw');
+
+// padding a string
+const massage = 'Go to gate 23!';
+console.log(massage.padStart(20, '+').padEnd(30, '+'));
+console.log('jonas'.padStart(20, '+').padEnd(30, '+'));
+
+//Real world example
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+console.log(maskCreditCard(32133212));
+console.log(maskCreditCard(32133212574383234));
+console.log(maskCreditCard('957863687829898934'));
+
+// Repeat
+const massage2 = 'Bad waether... All  Departues Delayed...';
+console.log(massage2.repeat(5));
+
+const planeInLine = function (n) {
+  console.log(`There are ${n} plane in line ${'✈'.repeat(n)}`);
+};
+planeInLine(5);
+planeInLine(3);
+
+/*
+// Working with string - part - 2
 const airline = 'TAP Air Portugal';
 console.log(airline.toLocaleLowerCase());
 console.log(airline.toLocaleUpperCase());
@@ -151,7 +202,6 @@ checkBaggage('I have a laptop, some Food and a Pocket Knife');
 checkBaggage('Socks and  camera');
 checkBaggage('Got some snacks and gun for protection');
 
-/*
 // Working with string - part- 1
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
