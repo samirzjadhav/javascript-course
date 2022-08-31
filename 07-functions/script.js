@@ -26,7 +26,7 @@ createBookings('HW123', undefined, 123);
 createBookings('HT858', 12, 500);
 createBookings('POKE', 34, 1000);
 createBookings('HER45', 54, undefined);
-*/
+
 
 const flight = 'LH234';
 const samir = {
@@ -57,3 +57,32 @@ const newPassport = function (person) {
 
 newPassport(samir);
 checkIn(flight, samir);
+*/
+
+// Functions accepting callback function
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split('');
+  return [first.toUpperCase(), ...others].join('');
+};
+
+// Higher-order function
+const tranformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+
+  console.log(`Tansformed by: ${fn.name}`);
+};
+tranformer('javascript is the best language', upperFirstWord);
+tranformer('javascript is the best language', oneWord);
+
+//js user callbacks all the time
+const high5 = function () {
+  console.log('👋🏻');
+};
+document.body.addEventListener('click', high5);
+
+['samir', 'ganesh', 'parish'].forEach(high5);
