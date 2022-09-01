@@ -57,7 +57,6 @@ const newPassport = function (person) {
 
 newPassport(samir);
 checkIn(flight, samir);
-*/
 
 // Functions accepting callback function
 const oneWord = function (str) {
@@ -86,3 +85,19 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 
 ['samir', 'ganesh', 'parish'].forEach(high5);
+*/
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('hey');
+greeterHey('samir');
+greeterHey('amol');
+
+greet('hello')('samir');
+
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+greetArr('hi')('samir');
