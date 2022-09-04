@@ -291,7 +291,7 @@ document
 
 poll.displayResult.call({ answers: [5, 2, 3] }, 'string');
 poll.displayResult.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
-*/
+
 
 // Immediately Invoked function expression (IIFE)
 const runOnce = function () {
@@ -314,3 +314,23 @@ runOnce();
 
 //console.log(isPrivate);
 console.log(notPrivate);
+*/
+
+// Closure
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passenger`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+console.dir(booker);
