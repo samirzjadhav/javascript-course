@@ -249,9 +249,8 @@ Test data for bonus:
 
 Hints: Use many of the tools you learned about in this and the last section 😉
 GOOD LUCK 😀
-
 */
-
+/*
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
@@ -292,3 +291,26 @@ document
 
 poll.displayResult.call({ answers: [5, 2, 3] }, 'string');
 poll.displayResult.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
+*/
+
+// Immediately Invoked function expression (IIFE)
+const runOnce = function () {
+  console.log(`this will never run again`);
+};
+
+runOnce();
+
+(function () {
+  console.log(`this will never run again`);
+  // const isPrivate = 23;
+})();
+
+(() => console.log(`this will ALSO never run again`))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 23;
+}
+
+//console.log(isPrivate);
+console.log(notPrivate);
