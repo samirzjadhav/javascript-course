@@ -1,5 +1,5 @@
 'use strict';
-/*
+
 const bookings = [];
 
 const createBookings = function (
@@ -250,7 +250,7 @@ Test data for bonus:
 Hints: Use many of the tools you learned about in this and the last section 😉
 GOOD LUCK 😀
 */
-/*
+
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
@@ -371,7 +371,7 @@ const boardPassengers = function (n, wait) {
 
 const perGroup = 1000;
 boardPassengers(180, 3);
-*/
+
 
 // Coding challenge 02
 /*
