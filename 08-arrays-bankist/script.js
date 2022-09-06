@@ -108,3 +108,16 @@ console.log([...arr, ...arr2]);
 
 //JOIN
 console.log(letter.join('-'));
+
+// new AT method
+const newArr = [23, 24, 35];
+console.log(newArr[0]);
+console.log(newArr.at(0));
+
+// Getting last array element
+console.log(newArr[newArr.length - 1]);
+console.log(newArr.slice(-1)[0]);
+console.log(newArr.at(-1));
+
+console.log('jonas'.at(0));
+console.log('jonas'.at(-1));
