@@ -82,6 +82,8 @@ displayMovements(account1.movements);
 /////////////////////////////////////////////////
 // LECTURES
 
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
@@ -165,3 +167,26 @@ movements.forEach(function (mov, i, arr) {
 // 3: FUNCTION(3000)
 // ...
 */
+
+// The Map Method in Array
+const eurToUsd = 1.1;
+
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+
+const movementsDescription = movements.map(
+  (mov, i) =>
+    `movement ${i + 1} You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+console.log(movementsDescription);
