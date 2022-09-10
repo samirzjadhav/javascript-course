@@ -166,27 +166,44 @@ movements.forEach(function (mov, i, arr) {
 // 2: FUNCTION(400)
 // 3: FUNCTION(3000)
 // ...
-*/
 
 // The Map Method in Array
 const eurToUsd = 1.1;
 
 // const movementsUSD = movements.map(function (mov) {
-//   return mov * eurToUsd;
-// });
-const movementsUSD = movements.map(mov => mov * eurToUsd);
-
-console.log(movements);
-console.log(movementsUSD);
-
-const movementsUSDfor = [];
-for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
-console.log(movementsUSDfor);
-
-const movementsDescription = movements.map(
-  (mov, i) =>
+  //   return mov * eurToUsd;
+  // });
+  const movementsUSD = movements.map(mov => mov * eurToUsd);
+  
+  console.log(movements);
+  console.log(movementsUSD);
+  
+  const movementsUSDfor = [];
+  for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+  console.log(movementsUSDfor);
+  
+  const movementsDescription = movements.map(
+    (mov, i) =>
     `movement ${i + 1} You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
       mov
-    )}`
-);
-console.log(movementsDescription);
+      )}`
+      );
+      console.log(movementsDescription);
+*/
+
+//THE FILTER METHOD IN ARRAY
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+  //return mov < 0;
+});
+console.log(movements);
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+const withdrawals = movements.filter(function (mov) {
+  return mov < 0;
+});
+console.log(withdrawals);
