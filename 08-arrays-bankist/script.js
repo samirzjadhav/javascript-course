@@ -78,15 +78,21 @@ const displayMovements = function (movement) {
 };
 displayMovements(account1.movements);
 
-const user = 'Steven Thomas Williams'; //stw
-const userName = user
-  .toLowerCase()
-  .split(' ')
-  .map(name => name[0])
-  .join('');
+const calsDisplaceBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calsDisplaceBalance(account1.movements);
 
-console.log(userName);
-console.log(user);
+// const user = 'Steven Thomas Williams'; //stw
+// const userName = user
+//   .toLowerCase()
+//   .split(' ')
+//   .map(name => name[0])
+//   .join('');
+
+// console.log(userName);
+// console.log(user);
 
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
@@ -228,5 +234,19 @@ const withdrawals = movements.filter(function (mov) {
   return mov < 0;
 });
 console.log(withdrawals);
-
 */
+
+//  THE REDUCE METHOD IN ARRAYS
+console.log(movements);
+// accumulator -> SNOWBALL
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   console.log(`Iteration ${i}:${acc}`);
+//   return acc + cur;
+// }, 0);
+
+const balance = movements.reduce((acc, cur, i, arr) => acc + cur, 0);
+console.log(balance);
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
