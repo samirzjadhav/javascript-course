@@ -279,7 +279,6 @@ const max = movements.reduce((acc, mov) => {
   else return mov;
 }, movements[0]);
 console.log(max);
-*/
 
 // The Magic of Chaining Method
 console.log(movements);
@@ -295,3 +294,12 @@ const totalDepositeUSD = movements
   //.map(mov => mov * eurToUsd)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(totalDepositeUSD);
+*/
+
+// The find Method
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(movements);
+console.log(firstWithdrawal);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
