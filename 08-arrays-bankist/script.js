@@ -398,7 +398,7 @@ console.log(firstWithdrawal);
 
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
-*/
+
 
 // Some and Every
 console.log(movements);
@@ -426,3 +426,43 @@ const depositmine = mov => mov < 0;
 console.log(movements.some(deposit));
 console.log(movements.every(deposit));
 console.log(movements.filter(deposit));
+*/
+
+// Flat and Flatmap
+
+const arr = [
+  [2, 3, 4],
+  [3, 4, 5],
+  [5, 6, 7],
+];
+console.log(arr.flat());
+
+const arrDeep = [
+  [3, 4, 5],
+  [2, 4, 5],
+  [2, [3, 6, 7]],
+];
+console.log(arrDeep.flat(2));
+
+const accountMovements = accounts.map(acc => acc.movements);
+console.log(accountMovements);
+
+const allMovements = accountMovements.flat();
+console.log(allMovements);
+
+const overAllBalance1 = allMovements.reduce((acc, mov) => acc + mov, 0);
+
+// FLAT
+const overAllBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(overAllBalance);
+
+// FLATMAP
+const overAllBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(overAllBalance2);
