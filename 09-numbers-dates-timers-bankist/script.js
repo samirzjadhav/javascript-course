@@ -330,7 +330,6 @@ console.log((2.7).toFixed(0));
 console.log((2.7).toFixed(3));
 console.log((2.345).toFixed(2));
 console.log(+(2.345).toFixed(2));
-*/
 
 // The Remainder Operator
 console.log(5 % 2);
@@ -357,3 +356,24 @@ labelBalance.addEventListener("click", function () {
   });
 });
 // nth time
+*/
+
+// numeric separators
+const diameter = 285_460_000_000;
+console.log(diameter);
+
+const price = 345_000;
+console.log(price);
+
+const transferFee1 = 15_00;
+const transferFee2 = 1_500;
+console.log(transferFee1, transferFee2);
+
+const PI = 3.2345; // 3._1234 is show unexpected token
+// const PI = _3.2345;
+// const PI = 3.2345_;
+// const PI = 3._2345;
+console.log(PI);
+
+console.log(Number("230000")); // 2300_00
+console.log(parseInt("230_000")); // 2300_00
