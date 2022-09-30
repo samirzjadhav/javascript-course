@@ -376,7 +376,6 @@ console.log(PI);
 
 console.log(Number("230000")); // 2300_00
 console.log(parseInt("230_000")); // 2300_00
-*/
 
 // Working With BigInt
 console.log(2 ** 53 - 1);
@@ -408,3 +407,32 @@ console.log(huge + " is REALLY big !!!");
 // Devisions
 console.log(11n / 3n);
 console.log(11 / 3);
+*/
+
+// Create a dates
+const now = new Date();
+console.log(now);
+
+console.log(new Date("Fri Sep 30 2022 21:13:32"));
+console.log(new Date("Fri December 25 2022 21:13:32"));
+
+console.log(new Date(2037, 11, 25, 14, 43, 5));
+
+// Working with dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getMilliseconds());
+console.log(future.toISOString());
+console.log(future.getTime());
+
+console.log(new Date(2142237180000));
+
+console.log(Date.now());
+
+future.setFullYear(2040);
+console.log(future);
