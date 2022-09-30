@@ -356,7 +356,6 @@ labelBalance.addEventListener("click", function () {
   });
 });
 // nth time
-*/
 
 // numeric separators
 const diameter = 285_460_000_000;
@@ -377,3 +376,35 @@ console.log(PI);
 
 console.log(Number("230000")); // 2300_00
 console.log(parseInt("230_000")); // 2300_00
+*/
+
+// Working With BigInt
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 0);
+
+console.log(1223456789097976498755n);
+console.log(BigInt(1223456789097976498755));
+
+// OPERATIONS
+console.log(100000n + 100000n);
+console.log(32333333333334888555555588882n * 100000000n);
+// console.log(Math.sqrt(16n));
+
+const huge = 23478829138400023445n;
+const num = 24;
+console.log(huge * BigInt(num));
+
+// Exceptions
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(typeof 20n);
+console.log(typeof 20);
+console.log(20n == 20);
+console.log(20n == "20");
+
+console.log(huge + " is REALLY big !!!");
+
+// Devisions
+console.log(11n / 3n);
+console.log(11 / 3);
