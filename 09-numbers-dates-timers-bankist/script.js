@@ -283,14 +283,16 @@ btnLoan.addEventListener("click", function (e) {
     amount > 0 &&
     currentAccount.movements.some((mov) => mov >= amount * 0.1)
   ) {
-    // Add movement
-    currentAccount.movements.push(amount);
+    setTimeout(function () {
+      // Add movement
+      currentAccount.movements.push(amount);
 
-    // add loan date
-    currentAccount.movementsDates.push(new Date().toISOString());
+      // add loan date
+      currentAccount.movementsDates.push(new Date().toISOString());
 
-    // Update UI
-    updateUI(currentAccount);
+      // Update UI
+      updateUI(currentAccount);
+    }, 2500);
   }
   inputLoanAmount.value = "";
 });
@@ -509,7 +511,6 @@ console.log(Date.now());
 
 future.setFullYear(2040);
 console.log(future);
-*/
 
 // Operation with Dates
 // const future = new Date(2037, 10, 19, 15, 23);
@@ -546,3 +547,20 @@ console.log(
   navigator.language,
   new Intl.NumberFormat(navigator.language, options).format(num)
 );
+*/
+
+// setTimeout
+const ingredents = ["olives", "spinach"];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
+  3000,
+  ...ingredents
+);
+console.log("waiting...");
+if (ingredents.includes("spinach")) clearTimeout(pizzaTimer);
+
+// SetInterval
+setInterval(function () {
+  const newDate = new Date();
+  console.log(newDate);
+}, 1000);
