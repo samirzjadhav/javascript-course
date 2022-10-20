@@ -29,3 +29,19 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
+
+// LECTURE
+//  Selecting element
+console.log(document.documentElement);
+console.log(document.head);
+console.log(document.body);
+
+document.querySelector(".header");
+const selectAll = document.querySelectorAll(".section");
+console.log(selectAll);
+
+document.getElementById("section--1");
+const allButton = document.getElementsByTagName("button");
+console.log(allButton);
+
+console.log(document.getElementsByClassName("btn"));
