@@ -36,7 +36,7 @@ console.log(document.documentElement);
 console.log(document.head);
 console.log(document.body);
 
-document.querySelector(".header");
+const header = document.querySelector(".header");
 const selectAll = document.querySelectorAll(".section");
 console.log(selectAll);
 
@@ -45,3 +45,25 @@ const allButton = document.getElementsByTagName("button");
 console.log(allButton);
 
 console.log(document.getElementsByClassName("btn"));
+
+// Creating and inserting element
+// .insertAdjacentHTML
+const message = document.createElement("div");
+message.classList.add("cookie-message");
+message.innerHTML =
+  'We use cookied for improved funtionality and analytics. <button class="btn btn--close-cookie"> Got it!<button>';
+
+header.prepend(message);
+header.append(message);
+
+// header.append(message.cloneNode(true));
+// header.before(message);
+header.after(message);
+
+// Delete elements
+document
+  .querySelector(".btn--close-cookie")
+  .addEventListener("click", function () {
+    // message.remove();
+    message.parentElement.removeChild(message);
+  });
