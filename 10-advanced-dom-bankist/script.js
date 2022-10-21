@@ -84,7 +84,6 @@ message.style.height =
 document.documentElement.style.setProperty("--color-primary", "orangered");
 
 // Attributes
-
 const logo = document.querySelector(".nav__logo");
 console.log(logo.alt);
 console.log(logo.src);
@@ -102,4 +101,7 @@ console.log(logo.dataset.versionNumber);
 logo.classList.add("c", "j");
 logo.classList.remove("c", "j");
 logo.classList.toggle("c", "j");
-logo.classList.contains("c", "j");
+logo.classList.contains("c", "j"); // not include
+
+// Don't use it
+logo.classList = "jonas";
