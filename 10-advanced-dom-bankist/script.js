@@ -117,7 +117,7 @@ btnScrolling.addEventListener("click", function (e) {
   console.log(s1coords);
 
   console.log(e.target.getBoundingClientRect());
-  console.log("current scroll (X/Y)", window.pageXOffset, pageYOffset);
+  console.log("current scroll (X/Y)", window.pageXOffset, window.pageYOffset);
 
   console.log(
     "Height/Width viewport",
@@ -125,17 +125,35 @@ btnScrolling.addEventListener("click", function (e) {
     document.documentElement.clientHeight
   );
 
-  smooth scrolling
-  window.scrollTo(
-    s1coords.left + window.pageXOffset,
-    s1coords.top + window.pageYOffset
-  );
+  // smooth scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
 
-  window.scrollTo({
-    left: s1coords.left + window.pageXOffset,
-    top: s1coords.top + window.pageYOffset,
-    behavior: "smooth",
-  });
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: "smooth",
+  // });
 
   section1.scrollIntoView({ behavior: "smooth" });
 });
+
+const h1 = document.querySelector("h1");
+
+const alerth1 = function (e) {
+  alert("addEventListener: Great! you are reading the heading :D");
+};
+
+h1.addEventListener("mouseenter", alerth1);
+
+setTimeout(() => h1.removeEventListener("mouseenter", alerth1), 3000);
+
+// h1.addEventListener("mouseenter", function (e) {
+//   alert("addEventListener: Great! you are reading the heading :D");
+// });
+
+// h1.onmouseenter = function (e) {
+//   alert("onmouseenter:  Great! you are reading the heading :D");
+// };
