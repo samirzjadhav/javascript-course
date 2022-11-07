@@ -152,6 +152,7 @@ nav.addEventListener("mouseout", handleHover.bind(1));
 // observer.observe(section1);
 
 const header = document.querySelector(".header");
+const navHeight = nav.getBoundingClientRect().height;
 
 const stickyNav = function (entries) {
   const [entry] = entries;
@@ -163,6 +164,7 @@ const stickyNav = function (entries) {
 const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0,
+  rootMargin: `-${navHeight}px`,
 });
 
 headerObserver.observe(header);
