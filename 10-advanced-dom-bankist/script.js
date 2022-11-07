@@ -109,7 +109,6 @@ tabsContainer.addEventListener("click", function (e) {
 });
 
 // menu fade animation
-
 const handleHover = function (e) {
   if (e.target.classList.contains("nav__link")) {
     const link = e.target;
@@ -124,57 +123,67 @@ const handleHover = function (e) {
   }
 };
 
+// Passing "Argument" into handler
 nav.addEventListener("mouseover", handleHover.bind(0.5));
 nav.addEventListener("mouseout", handleHover.bind(1));
 
-const handleHover = function (e, opacity) {
-  if (e.target.classList.contains("nav__link")) {
-    const link = e.target;
-    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
-    console.log(siblings);
-    const logo = link.closest(".nav").querySelector("img");
+// Sticky navigation
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords);
 
-    siblings.forEach((el) => {
-      if (el !== link) el.style.opacity = opacity;
-    });
-    logo.style.opacity = opacity;
-  }
-};
-
-nav.addEventListener("mouseover", function (e) {
-  handleHover(e, 0.5);
-});
-nav.addEventListener("mouseout", function (e) {
-  handleHover(e, 1);
+window.addEventListener("scroll", function () {
+  if (window.scrollY > initialCoords.top) nav.classList.add("sticky");
+  else nav.classList.remove("sticky");
 });
 
-nav.addEventListener("mouseover", function (e) {
-  if (e.target.classList.contains("nav__link")) {
-    const link = e.target;
-    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
-    console.log(siblings);
-    const logo = link.closest(".nav").querySelector("img");
+// const handleHover = function (e, opacity) {
+//   if (e.target.classList.contains("nav__link")) {
+//     const link = e.target;
+//     const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+//     console.log(siblings);
+//     const logo = link.closest(".nav").querySelector("img");
 
-    siblings.forEach((el) => {
-      if (el !== link) el.style.opacity = 0.5;
-    });
-    logo.style.opacity = 0.5;
-  }
-});
+//     siblings.forEach((el) => {
+//       if (el !== link) el.style.opacity = opacity;
+//     });
+//     logo.style.opacity = opacity;
+//   }
+// };
 
-nav.addEventListener("mouseout", function (e) {
-  if (e.target.classList.contains("nav__link")) {
-    const link = e.target;
-    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
-    console.log(siblings);
-    const logo = link.closest(".nav").querySelector("img");
+// nav.addEventListener("mouseover", function (e) {
+//   handleHover(e, 0.5);
+// });
+// nav.addEventListener("mouseout", function (e) {
+//   handleHover(e, 1);
+// });
 
-    siblings.forEach((el) => {
-      if (el !== link) el.style.opacity = 1;
-    });
-    logo.style.opacity = 1;
-  }
-});
+// nav.addEventListener("mouseover", function (e) {
+//   if (e.target.classList.contains("nav__link")) {
+//     const link = e.target;
+//     const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+//     console.log(siblings);
+//     const logo = link.closest(".nav").querySelector("img");
+
+//     siblings.forEach((el) => {
+//       if (el !== link) el.style.opacity = 0.5;
+//     });
+//     logo.style.opacity = 0.5;
+//   }
+// });
+
+// nav.addEventListener("mouseout", function (e) {
+//   if (e.target.classList.contains("nav__link")) {
+//     const link = e.target;
+//     const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+//     console.log(siblings);
+//     const logo = link.closest(".nav").querySelector("img");
+
+//     siblings.forEach((el) => {
+//       if (el !== link) el.style.opacity = 1;
+//     });
+//     logo.style.opacity = 1;
+//   }
+// });
 
 /*
 // LECTURE
