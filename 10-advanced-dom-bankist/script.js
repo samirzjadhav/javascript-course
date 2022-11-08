@@ -191,6 +191,34 @@ allSections.forEach(function (section) {
   section.classList.add("section--hidden");
 });
 
+// lazy page loading
+const imgTarget = document.querySelectorAll("img[data-src]");
+
+const loadImg = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  //  replace src with data-src
+  entry.target.src = entry.target.dataset.src;
+
+  entry.target.addEventListener("load", function () {
+    entry.target.classList.remove("lazy-img");
+  });
+
+  observer.unobserve(entry.target);
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: "-50px",
+});
+
+imgTarget.forEach(function (img) {
+  imgObserver.observe(img);
+});
+
 // const handleHover = function (e, opacity) {
 //   if (e.target.classList.contains("nav__link")) {
 //     const link = e.target;
