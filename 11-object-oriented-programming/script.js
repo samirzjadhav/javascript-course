@@ -41,3 +41,21 @@ console.log(jonas.species, mitilda.species);
 
 console.log(jonas.hasOwnProperty("firstName"));
 console.log(jonas.hasOwnProperty("birthYear"));
+
+console.log(jonas.__proto__);
+// Object.prototype (top of prototype chain)
+console.log(jonas.__proto__.__proto__);
+console.log(jonas.__proto__.__proto__.__proto__);
+
+console.dir(Person.prototype.constructor);
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(arr.__proto__);
+console.log(arr.__proto__.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+
+Array.prototype.unique = function () {
+  return [...new Set(this)];
+};
+
+console.log(arr.unique);
