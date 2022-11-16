@@ -99,3 +99,36 @@ bmw.accelerate();
 bmw.brake();
 bmw.accelerate();
 bmw.accelerate();
+
+// class expression
+// const PersonCl =
+
+// class declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+
+const sam = new PersonCl("samir", 2004);
+console.log(sam);
+sam.calcAge();
+
+console.log(sam.__proto__ === PersonCl.prototype);
+
+// PersonCl.prototype.greet = function () {
+//   console.log(`Hey ${this.firstName}`);
+// };
+sam.greet();
+
+// 1. Classes is Not Hoisted
+// 2. Classes are first-class citizes
+// 3. Classes are excuted in strict mode
