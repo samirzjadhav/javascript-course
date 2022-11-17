@@ -1,5 +1,6 @@
 "use strict";
 
+/*
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
   this.birthYear = birthYear;
@@ -60,7 +61,8 @@ Array.prototype.unique = function () {
 
 console.log(arr.unique);
 
-/*Coding Challenge #1
+/*
+Coding Challenge #1
 Your tasks:
 1. Use a constructor function to implementa 'Car'.
  Acarhasa 'make' anda 'speed' property. The 'speed' property
@@ -105,10 +107,11 @@ bmw.accelerate();
 
 // class declaration
 class PersonCl {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName;
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = birthYear;
   }
+
   calcAge() {
     console.log(2037 - this.birthYear);
   }
@@ -116,11 +119,25 @@ class PersonCl {
   greet() {
     console.log(`Hey ${this.firstName}`);
   }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+  set fullName(name) {
+    console.log(name);
+    if (name.includes(" ")) this._fullName = name;
+    else alert(`${name} this is not full name!`);
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
 }
 
-const sam = new PersonCl("samir", 2004);
+const sam = new PersonCl("samir jadhav", 2004);
 console.log(sam);
 sam.calcAge();
+console.log(sam.age);
 
 console.log(sam.__proto__ === PersonCl.prototype);
 
@@ -132,3 +149,20 @@ sam.greet();
 // 1. Classes is Not Hoisted
 // 2. Classes are first-class citizes
 // 3. Classes are excuted in strict mode
+
+const account = {
+  owner: "samir",
+  movements: [200, 300, 400, 500],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+console.log(account.latest);
+
+account.latest = 60;
+console.log(account.movements);
