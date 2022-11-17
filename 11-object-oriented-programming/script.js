@@ -102,6 +102,12 @@ bmw.brake();
 bmw.accelerate();
 bmw.accelerate();
 
+Person.hey = function () {
+  console.log("hey there 👋 ");
+  console.log(this);
+};
+Person.hey();
+
 // class expression
 // const PersonCl =
 
@@ -131,6 +137,11 @@ class PersonCl {
 
   get fullName() {
     return this._fullName;
+  }
+
+  static hey() {
+    console.log("hey there 👋 ");
+    console.log(this);
   }
 }
 
