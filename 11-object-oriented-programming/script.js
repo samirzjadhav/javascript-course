@@ -181,6 +181,7 @@ account.latest = 60;
 console.log(account.movements);
 */
 
+/*
 const PersonProto = {
   CalcAge() {
     console.log(2037 - this.birthYear);
@@ -203,6 +204,7 @@ console.log(steven.__proto__ === PersonProto);
 const samir = Object.create(PersonProto);
 samir.init("samir", 2004);
 samir.CalcAge();
+*/
 
 /*Coding Challenge #2
 Your tasks:
@@ -217,6 +219,7 @@ Test data:
 § Data car 1: 'Ford' going at 120 km/h GOOD LUCK 😀
 */
 
+/*
 class CarCl {
   constructor(make, speed) {
     this.make = make;
@@ -248,3 +251,38 @@ console.log(ford.speedUs);
 ford.accelerate();
 ford.speedUs = 30;
 console.log(ford);
+*/
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.CalcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const samir = new Student("Samir", 2004, "Computer Science");
+samir.introduce();
+samir.CalcAge();
+
+console.log(samir.__proto__);
+console.log(samir.__proto__.__proto__);
+
+console.log(samir instanceof Student);
+console.log(samir instanceof Person);
+console.log(samir instanceof Object);
+
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
