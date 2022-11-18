@@ -79,6 +79,7 @@ Test data:
 GOOD LUCK 😀
 */
 
+/*
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -102,11 +103,12 @@ bmw.brake();
 bmw.accelerate();
 bmw.accelerate();
 
-Person.hey = function () {
-  console.log("hey there 👋 ");
+
+Person.hey= function(){
+  console.log('hey there 👋 ');
   console.log(this);
-};
-Person.hey();
+}
+Person.hey()
 
 // class expression
 // const PersonCl =
@@ -139,8 +141,8 @@ class PersonCl {
     return this._fullName;
   }
 
-  static hey() {
-    console.log("hey there 👋 ");
+  static hey(){
+    console.log('hey there 👋 ');
     console.log(this);
   }
 }
@@ -177,3 +179,27 @@ console.log(account.latest);
 
 account.latest = 60;
 console.log(account.movements);
+*/
+
+const PersonProto = {
+  CalcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.name = "samir";
+steven.birthYear = 2004;
+steven.CalcAge();
+
+console.log(steven.__proto__ === PersonProto);
+
+const samir = Object.create(PersonProto);
+samir.init("samir", 2004);
+samir.CalcAge();
