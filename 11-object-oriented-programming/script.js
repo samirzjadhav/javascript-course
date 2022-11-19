@@ -77,9 +77,9 @@ Test data:
 § Data car 1: 'BMW' going at 120 km/h
 § Data car 2: 'Mercedes' going at 95 km/h
 GOOD LUCK 😀
-*/
 
-/*
+
+
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -103,12 +103,12 @@ bmw.brake();
 bmw.accelerate();
 bmw.accelerate();
 
-
-Person.hey= function(){
-  console.log('hey there 👋 ');
+Person.hey = function () {
+  console.log("hey there 👋 ");
   console.log(this);
-}
-Person.hey()
+};
+Person.hey();
+*/
 
 // class expression
 // const PersonCl =
@@ -131,6 +131,7 @@ class PersonCl {
   get age() {
     return 2037 - this.birthYear;
   }
+
   set fullName(name) {
     console.log(name);
     if (name.includes(" ")) this._fullName = name;
@@ -141,12 +142,38 @@ class PersonCl {
     return this._fullName;
   }
 
-  static hey(){
-    console.log('hey there 👋 ');
+  static hey() {
+    console.log("hey there 👋 ");
     console.log(this);
   }
 }
 
+class StudentCl extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`My name is ${this.fullName} and I study in ${this.course}`);
+  }
+
+  calcAge() {
+    console.log(
+      `I'm ${
+        2022 - this.birthYear
+      } year old, but as a student I fell more like ${
+        2022 - this.birthYear + 10
+      }`
+    );
+  }
+}
+
+const samir = new StudentCl("sameer jadhav", 2004, "computer science");
+samir.introduce();
+samir.calcAge();
+
+/*
 const sam = new PersonCl("samir jadhav", 2004);
 console.log(sam);
 sam.calcAge();
@@ -251,7 +278,6 @@ console.log(ford.speedUs);
 ford.accelerate();
 ford.speedUs = 30;
 console.log(ford);
-*/
 
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
@@ -286,6 +312,7 @@ console.log(samir instanceof Object);
 
 Student.prototype.constructor = Student;
 console.dir(Student.prototype.constructor);
+*/
 
 /*
 Coding Challenge #3
@@ -304,6 +331,7 @@ at 140 km/h, with a charge of 22%'
 Test data:
 § Data car 1: 'Tesla' going at 120 km/h, with a charge of 23% GOOD LUCK 😀
 */
+/*
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -339,3 +367,4 @@ tesla.chargeBattery(90);
 console.log(tesla);
 tesla.brake();
 tesla.accelerate();
+*/
