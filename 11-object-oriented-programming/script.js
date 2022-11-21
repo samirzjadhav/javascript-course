@@ -397,3 +397,42 @@ const jay = Object.create(StudentProto);
 jay.init("jay", 2004, "Computer Science");
 jay.introduce();
 jay.calcAge();
+
+class Account {
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.pin = pin;
+    this.movements = [];
+    this.locale = navigator.language;
+    console.log(`Thanks for opening an account, ${owner}`);
+  }
+
+  // Public interface
+  deposite(val) {
+    this.movements.push(val);
+  }
+
+  withdraw(val) {
+    this.deposite(-val);
+  }
+
+  approveLone(val) {
+    return true;
+  }
+
+  requenstLoan(val) {
+    if (this.approveLone(val)) {
+      this.deposite(val);
+      console.log(`Loan Approve`);
+    }
+  }
+}
+
+const acc1 = new Account("samir", "EUR", 1111);
+// acc1.movements.push(140);
+// acc1.movements.push(-1140);
+acc1.requenstLoan(1000);
+acc1.deposite(250);
+acc1.withdraw(140);
+console.log(acc1);
