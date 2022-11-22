@@ -108,7 +108,7 @@ Person.hey = function () {
   console.log(this);
 };
 Person.hey();
-*/
+
 
 // class expression
 // const PersonCl =
@@ -172,6 +172,7 @@ class StudentCl extends PersonCl {
 const samir = new StudentCl("sameer jadhav", 2004, "computer science");
 samir.introduce();
 samir.calcAge();
+*/
 
 /*
 const sam = new PersonCl("samir jadhav", 2004);
@@ -368,3 +369,31 @@ console.log(tesla);
 tesla.brake();
 tesla.accelerate();
 */
+
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+
+const StudentProto = Object.create(PersonProto);
+StudentProto.init = function (firstName, birthyear, course) {
+  PersonProto.init.call(this, firstName, birthyear);
+  this.course = course;
+};
+
+StudentProto.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study in ${this.course}`);
+};
+
+const jay = Object.create(StudentProto);
+jay.init("jay", 2004, "Computer Science");
+jay.introduce();
+jay.calcAge();
