@@ -435,12 +435,23 @@ class Account {
     this.deposite(-val);
   }
 
-  _approveLone(val) {
+  // _approveLone(val) {
+  //   return true;
+  // }
+
+  // requenstLoan(val) {
+  //   if (this._approveLone(val)) {
+  //     this.deposite(val);
+  //     console.log(`Loan Approve`);
+  //   }
+  // }
+  // 4) private methods
+  #approveLone(val) {
     return true;
   }
 
   requenstLoan(val) {
-    if (this._approveLone(val)) {
+    if (this.#approveLone(val)) {
       this.deposite(val);
       console.log(`Loan Approve`);
     }
