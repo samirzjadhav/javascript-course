@@ -430,22 +430,25 @@ class Account {
 
   deposite(val) {
     this.#movements.push(val);
+    return this;
   }
 
   withdraw(val) {
     this.deposite(-val);
+    return this;
   }
 
-  // _approveLone(val) {
-  //   return true;
-  // }
+  _approveLone(val) {
+    return true;
+  }
 
-  // requenstLoan(val) {
-  //   if (this._approveLone(val)) {
-  //     this.deposite(val);
-  //     console.log(`Loan Approve`);
-  //   }
-  // }
+  requenstLoan(val) {
+    if (this._approveLone(val)) {
+      this.deposite(val);
+      console.log(`Loan Approve`);
+      return this;
+    }
+  }
 
   // static version
   static helper() {
@@ -453,16 +456,16 @@ class Account {
   }
 
   // 4) private methods
-  #approveLone(val) {
-    return true;
-  }
+  // #approveLone(val) {
+  //   return true;
+  // }
 
-  requenstLoan(val) {
-    if (this.#approveLone(val)) {
-      this.deposite(val);
-      console.log(`Loan Approve`);
-    }
-  }
+  // requenstLoan(val) {
+  //   if (this.#approveLone(val)) {
+  //     this.deposite(val);
+  //     console.log(`Loan Approve`);
+  //   }
+  // }
 }
 
 const acc1 = new Account("samir", "EUR", 1111);
@@ -477,3 +480,13 @@ console.log(acc1);
 // console.log(acc1.#movements);
 // console.log(acc1.#pin);
 Account.helper();
+
+// chaining methods
+acc1
+  .deposite(100)
+  .deposite(300)
+  .withdraw(25)
+  .requenstLoan(50000)
+  .withdraw(3000);
+
+console.log(acc1.getMovements());
