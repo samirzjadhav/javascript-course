@@ -402,6 +402,7 @@ jay.calcAge();
 // private fields
 // public methods
 // private methods
+// (there is also the static version)
 class Account {
   // 1) public fields (instances)
   locale = navigator.language;
@@ -445,6 +446,12 @@ class Account {
   //     console.log(`Loan Approve`);
   //   }
   // }
+
+  // static version
+  static helper() {
+    console.log("helper");
+  }
+
   // 4) private methods
   #approveLone(val) {
     return true;
@@ -469,3 +476,4 @@ console.log(acc1);
 
 // console.log(acc1.#movements);
 // console.log(acc1.#pin);
+Account.helper();
