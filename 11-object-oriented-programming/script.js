@@ -398,14 +398,22 @@ jay.init("jay", 2004, "Computer Science");
 jay.introduce();
 jay.calcAge();
 
+// public fields
+// private fields
+// public methods
+// private methods
 class Account {
+  // public fields
+  locale = navigator.language;
+  _movements = [];
+
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
     // Protected Property
     this._pin = pin;
-    this._movements = [];
-    this.locale = navigator.language;
+    // this. _movements= [];
+    // this.locale = navigator.language;
     console.log(`Thanks for opening an account, ${owner}`);
   }
 
