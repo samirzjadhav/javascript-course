@@ -24,6 +24,38 @@ class workout {
   }
 }
 
+class Running extends workout {
+  constructor(coords, distance, duration, cadence) {
+    super(coords, distance, duration);
+    this.cadence = cadence;
+    this.calcPace();
+  }
+
+  calcPace() {
+    // min/km
+    this.pece = this.duration / this.distance;
+    return this.pece;
+  }
+}
+class Cycling extends workout {
+  constructor(coords, distance, duration, elevationGain) {
+    super(coords, distance, duration);
+    this.elevationGain = elevationGain;
+    this.calcSpeed();
+  }
+
+  calcSpeed() {
+    // km/h
+    this.speed = this.distance / (this.duration / 60);
+    return this.speed;
+  }
+}
+
+// const run1 = new Running([39, -12], 5.2, 24, 200);
+// const Cycling1 = new Running([39, -12], 27, 65, 405);
+// console.log(run1, Cycling1);
+
+// application architecture
 class App {
   #map;
   #mapEvent;
