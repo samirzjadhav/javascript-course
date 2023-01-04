@@ -110,6 +110,10 @@ class App {
 
     // landling click on map
     this.#map.on('click', this._showForm.bind(this));
+
+    this.#workout.forEach(work => {
+      this._renderWorkoutMarker(work);
+    });
   }
 
   _hideForm() {
@@ -189,6 +193,9 @@ class App {
 
     // hide form + clear input fields
     this._hideForm();
+
+    // Set local storage to all workouts
+    this._setLocalStorage();
   }
 
   _renderWorkoutMarker(workout) {
@@ -277,6 +284,25 @@ class App {
 
     // using the public interface
     workout.click();
+  }
+  _setLocalStorage() {
+    localStorage.setItem('workouts', JSON.stringify(this.#workout));
+  }
+
+  _getlocalStorage() {
+    const data = JSON.parse(localStorage.getItem('workout'));
+    console.log(data);
+
+    if (!data) return;
+    this.#workout = data;
+
+    this.#workout.forEach(work => {
+      this._renderWorkout(work);
+    });
+  }
+  reset() {
+    localStorage.removeItem('workouts');
+    location.reload();
   }
 }
 
