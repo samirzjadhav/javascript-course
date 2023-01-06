@@ -71,6 +71,7 @@ const renderContry = function (data, className = "") {
   countriesContainer.style.opacity = 1;
 };
 
+/*
 const getCountryAndNeighbour = function (country) {
   // AJAX CALL COUNTRY 1
   const request = new XMLHttpRequest();
@@ -116,3 +117,11 @@ setTimeout(() => {
     }, 1000);
   }, 1000);
 }, 1000);
+*/
+
+// Fetch function
+// const request = new XMLHttpRequest();
+// request.open("GET", `https://restcountries.com/v3.1/name/${country}`);
+// request.send();
+
+const request = fetch("https://restcountries.com/v3.1/name/India");
