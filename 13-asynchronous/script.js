@@ -125,3 +125,26 @@ setTimeout(() => {
 // request.send();
 
 const request = fetch("https://restcountries.com/v3.1/name/India");
+console.log(request);
+
+/*
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then(function (response) {
+      console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      renderContry(data[0]);
+    });
+};
+*/
+
+// simplified version of promises
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then((response) => response.json())
+    .then((data) => renderContry(data[0]));
+};
+getCountryData("india");
