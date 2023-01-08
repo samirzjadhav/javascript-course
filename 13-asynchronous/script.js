@@ -11,6 +11,34 @@ const formatNumber = function (num) {
   return x.toFixed(2) + units[Math.floor(unit / 3) - 2];
 };
 
+const renderContry = function (data, className = "") {
+  const currency = Object.keys(data.currencies)[0];
+  const language = Object.values(data.languages)[0];
+
+  const html = `     
+  <article class="country ${className}">
+    <img class="country__img" src="${data.flags.png}" />
+    <div class="country__data">
+      <h3 class="country__name">${data.name.common}</h3>
+      <h4 class="country__region">${data.region}</h4>
+      <p class="country__row"><span>👫</span>${formatNumber(
+        data.population
+      )} People</p>
+      <p class="country__row"><span>🗣️</span>${language}</p>
+      <p class="country__row"><span>💰</span>${
+        data.currencies[currency].symbol
+      } ${data.currencies[currency].name}</p>
+    </div>
+  </article>`;
+  countriesContainer.insertAdjacentHTML("beforeend", html);
+  countriesContainer.style.opacity = 1;
+};
+
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText("beforeend", msg);
+  countriesContainer.style.opacity = 1;
+};
+
 /*
 const getCountryData = function (country) {
   const request = new XMLHttpRequest();
@@ -48,28 +76,6 @@ getCountryData("india");
 getCountryData("USA");
 getCountryData("portugal");
 */
-
-const renderContry = function (data, className = "") {
-  const currency = Object.keys(data.currencies)[0];
-  const language = Object.values(data.languages)[0];
-  const html = `     
-  <article class="country ${className}">
-    <img class="country__img" src="${data.flags.png}" />
-    <div class="country__data">
-      <h3 class="country__name">${data.name.common}</h3>
-      <h4 class="country__region">${data.region}</h4>
-      <p class="country__row"><span>👫</span>${formatNumber(
-        data.population
-      )} People</p>
-      <p class="country__row"><span>🗣️</span>${language}</p>
-      <p class="country__row"><span>💰</span>${
-        data.currencies[currency].symbol
-      } ${data.currencies[currency].name}</p>
-    </div>
-  </article>`;
-  countriesContainer.insertAdjacentHTML("beforeend", html);
-  countriesContainer.style.opacity = 1;
-};
 
 /*
 const getCountryAndNeighbour = function (country) {
@@ -148,13 +154,22 @@ const getCountryData = function (country) {
     .then((response) => response.json())
     .then((data) => {
       renderContry(data[0]);
-      const neighbour = data[0].borders[0];
+      const neighbour = Object.keys(data[0].borders[0]);
       if (!neighbour) return;
 
       // Country 2
       return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
     })
     .then((response) => response.json())
-    .then((data) => renderContry(data, "neighbour"));
+    .then((data) => renderContry(data, "neighbour"))
+    .catch((err) => {
+      console.error(`${err}💥💥💥💥`);
+      renderError(`Something went wrong 💥💥💥 ${err} try again!`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
 };
-getCountryData("india");
+btn.addEventListener("click", function () {
+  getCountryData("india");
+});
