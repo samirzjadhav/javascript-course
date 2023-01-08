@@ -147,20 +147,57 @@ const getCountryData = function (country) {
 };
 */
 
+const getJSON = function (url, errorMsg = "Something went wrong") {
+  return fetch(url).then((response) => {
+    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+    return response.json();
+  });
+};
+
 // simplified version of promises
+// const getCountryData = function (country) {
+//   // Country 1
+//   fetch(`https://restcountries.com/v3.1/name/${country}`)
+//     .then((response) => {
+//       console.log(response);
+//       if (!response.ok)
+//         throw new Error(`country not found (${response.status})`);
+//       return response.json();
+//     })
+//     .then((data) => {
+//       renderContry(data[0]);
+//       const neighbour = Object.keys(data[0].borders[0]);
+//       if (!neighbour) return;
+
+//       // Country 2
+//       return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+//     })
+//     .then((response) => response.json())
+//     .then((data) => renderContry(data, "neighbour"))
+//     .catch((err) => {
+//       console.error(`${err}💥💥💥💥`);
+//       renderError(`Something went wrong 💥💥💥 ${err} try again!`);
+//     })
+//     .finally(() => {
+//       countriesContainer.style.opacity = 1;
+//     });
+// };
+
 const getCountryData = function (country) {
   // Country 1
-  fetch(`https://restcountries.com/v3.1/name/${country}`)
-    .then((response) => response.json())
+  getJSON(
+    `https://restcountries.com/v3.1/name/${country}`,
+    "country not found "
+  )
     .then((data) => {
       renderContry(data[0]);
-      const neighbour = Object.keys(data[0].borders[0]);
-      if (!neighbour) return;
+      const neighbour = data[0].borders[0];
+      if (!neighbour) throw new Error("no neighbour found!");
 
+      console.log(data);
       // Country 2
-      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+      getJSON(`https://restcountries.com/v3.1/alpha/${neighbour}`);
     })
-    .then((response) => response.json())
     .then((data) => renderContry(data, "neighbour"))
     .catch((err) => {
       console.error(`${err}💥💥💥💥`);
