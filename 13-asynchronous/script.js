@@ -281,46 +281,46 @@ GOOD LUCK 😀
 // console.log("Test end");
 
 // BULDING A SIMPLE PROMISES
-const lotteryPromises = new Promise(function (resolve, reject) {
-  console.log("Lottery draw is happening 🔮");
-  setTimeout(() => {
-    if (Math.random() >= 0.5) {
-      resolve("You win 💰");
-    } else {
-      reject(new Error("You lost your money 💩"));
-    }
-  }, 2000);
-});
-lotteryPromises
-  .then((res) => console.log(res))
-  .catch((err) => console.error(err));
+// const lotteryPromises = new Promise(function (resolve, reject) {
+//   console.log("Lottery draw is happening 🔮");
+//   setTimeout(() => {
+//     if (Math.random() >= 0.5) {
+//       resolve("You win 💰");
+//     } else {
+//       reject(new Error("You lost your money 💩"));
+//     }
+//   }, 2000);
+// });
+// lotteryPromises
+//   .then((res) => console.log(res))
+//   .catch((err) => console.error(err));
 
-// Promisifying setTimeout
-const wait = function (second) {
-  return new Promise(function (resolve) {
-    setTimeout(resolve, second * 1000);
-  });
-};
+// // Promisifying setTimeout
+// const wait = function (second) {
+//   return new Promise(function (resolve) {
+//     setTimeout(resolve, second * 1000);
+//   });
+// };
 
 // asynchronous behavior
-wait(2)
-  .then(() => {
-    console.log("1 second passed");
-    return wait(1);
-  })
-  .then(() => {
-    console.log("2 second passed");
-    return wait(1);
-  })
-  .then(() => {
-    console.log("3 second passed");
-    return wait(1);
-  })
-  .then(() => {
-    console.log("4 second passed");
-    return wait(1);
-  })
-  .then(() => console.log("5 second passed"));
+// wait(2)
+//   .then(() => {
+//     console.log("1 second passed");
+//     return wait(1);
+//   })
+//   .then(() => {
+//     console.log("2 second passed");
+//     return wait(1);
+//   })
+//   .then(() => {
+//     console.log("3 second passed");
+//     return wait(1);
+//   })
+//   .then(() => {
+//     console.log("4 second passed");
+//     return wait(1);
+//   })
+//   .then(() => console.log("5 second passed"));
 
 // CallBack Hell
 // setTimeout(() => {
@@ -336,5 +336,41 @@ wait(2)
 //   }, 1000);
 // }, 1000);
 
-Promise.resolve("abc").then((x) => console.log("x"));
-Promise.reject(new Error("problem!")).catch((x) => console.error("x"));
+// Promise.resolve("abc").then((x) => console.log("x"));
+// Promise.reject(new Error("problem!")).catch((x) => console.error("x"));
+
+// PROMISIFYING THE GEOLOCATION APIS
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    // navigator.geolocation.getCurrentPosition(
+    //   (position) => resolve(position),
+    //   (err) => reject(err)
+    // );
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+getPosition().then((pos) => console.log(pos));
+const whereAmI = function () {
+  getPosition()
+    .then((pos) => {
+      const { latitude: lat, longitude: lng } = pos.coords;
+      return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    })
+    .then((res) => {
+      if (!res.ok) throw new Error(`problem with geocoding ${res.status}`);
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      console.log(`your in ${data.city}, ${data.country}`);
+      return fetch(`https://restcountries.com/v3.1/name/${data.country}`);
+    })
+    .then((res) => {
+      console.log(res);
+      if (!res.ok) throw new Error(`country not found (${res.status})`);
+      return res.json();
+    })
+    .then((data) => renderContry(data[0]))
+    .catch((err) => console.error(`${err.massage} 💥 `));
+};
+btn.addEventListener("click", whereAmI);
