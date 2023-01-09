@@ -408,6 +408,7 @@ TEST DATA: Images in the img folder. Test the error handler by passing a wrong i
 GOOD LUCK 😀
 */
 
+/*
 const wait = function (seconds) {
   return new Promise(function (resolve) {
     setTimeout(resolve, seconds * 1000);
@@ -453,6 +454,7 @@ createImage("img/img-1.jpg")
     currentImg.style.display = "none";
   })
   .catch((err) => console.error(err));
+  */
 
 // const callMe = () =>
 //   new Promise((res, reject) => {
@@ -469,3 +471,46 @@ createImage("img/img-1.jpg")
 //   .then((result) => console.log("success", result))
 //   .catch((err) => console.log("err", err))
 //   .finally(() => console.log("setting loading to false"));
+
+const whereAmIBtn = document.getElementById("btn");
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+const whereAmI = async function () {
+  try {
+    whereAmIBtn.textContent = "loading...";
+    // Geolocation
+    const pos = await getPosition();
+    console.log(pos);
+    const { latitude: lat, longitude: lng } = pos.coords;
+
+    // Reverse geocoding
+    const dataGeo = await fetch(
+      `https://geocode.xyz/${lat},${lng}?geoit=json`
+    ).then((res) => res.json());
+    console.log(dataGeo);
+
+    // Country data
+    // fetch(`https://restcountries.com/v3.1/name/${country}`).then((res) =>
+    //   console.log(res)
+    // );
+    const res = await fetch(
+      `https://restcountries.com/v3.1/name/${dataGeo.country}`
+    );
+    const data = await res.json();
+    renderContry(data[0]);
+    whereAmIBtn.textContent = "Where am I?";
+  } catch (error) {
+    console.log(error);
+    alert("sorry something went wrong!!!");
+    whereAmIBtn.textContent = "Where am I?";
+  }
+};
+// whereAmI();
+// console.log("First");
+
+whereAmIBtn.addEventListener("click", whereAmI);
