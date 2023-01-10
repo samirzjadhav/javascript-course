@@ -618,7 +618,7 @@ images with the 'createImage' function (call the resulting array 'imgs')
 3. Check out the 'imgs' array in the console! Is it like you expected?
 4. Use a promise combinator function to actually get the images 
 from the array 😉
-5. Add the 'paralell' class to all the 
+5. Add the 'parallel' class to all the 
 images (it has some CSS styles).
 TEST DATA: ['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']
 . To test, turn off the 'loadNPause' function.
@@ -644,23 +644,43 @@ const createImage = function (imgPath) {
 
 let currentImg;
 
-createImage("img/img-1.jpg")
-  .then((img) => {
-    currentImg = img;
-    console.log("Image 1 loaded");
-    return wait(2);
-  })
-  .then(() => {
-    currentImg.style.display = "none";
-    return createImage("img/img-2.jpg");
-  })
-  .then((img) => {
-    currentImg = img;
-    console.log("Image 2 loaded");
-    return wait(2);
-  })
-  .then(() => {
-    console.log("none display after 2 second");
-    currentImg.style.display = "none";
-  })
-  .catch((err) => console.error(err));
+// createImage("img/img-1.jpg")
+//   .then((img) => {
+//     currentImg = img;
+//     console.log("Image 1 loaded");
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = "none";
+//     return createImage("img/img-2.jpg");
+//   })
+//   .then((img) => {
+//     currentImg = img;
+//     console.log("Image 2 loaded");
+//     return wait(2);
+//   })
+//   .then(() => {
+//     console.log("none display after 2 second");
+//     currentImg.style.display = "none";
+//   })
+//   .catch((err) => console.error(err));
+
+// Part 1
+const loadNPause = async function () {
+  try {
+    // Load Image 1
+    let img = await createImage("img/img-1.jpg");
+    console.log("Images 1 loaded");
+    await wait(2);
+    img.style.display = "none";
+
+    // Load Image 2
+    img = await createImage("img/img-2.jpg");
+    console.log("Images 2 loaded");
+    await wait(2);
+    img.style.display = "none";
+  } catch (err) {
+    console.log(err);
+  }
+};
+loadNPause();
