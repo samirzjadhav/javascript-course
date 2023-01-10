@@ -493,6 +493,7 @@ const whereAmI = async function () {
       `https://geocode.xyz/${lat},${lng}?geoit=json`
     ).then((res) => res.json());
     console.log(dataGeo);
+    if (!dataGeo.ok) throw new Error("problem getting country");
 
     // Country data
     // fetch(`https://restcountries.com/v3.1/name/${country}`).then((res) =>
@@ -501,16 +502,29 @@ const whereAmI = async function () {
     const res = await fetch(
       `https://restcountries.com/v3.1/name/${dataGeo.country}`
     );
+    if (!res.ok) throw new Error("problem getting country");
     const data = await res.json();
     renderContry(data[0]);
     whereAmIBtn.textContent = "Where am I?";
-  } catch (error) {
-    console.log(error);
-    alert("sorry something went wrong!!!");
-    whereAmIBtn.textContent = "Where am I?";
+  } catch (err) {
+    console.log(`${err} 💥`);
+    renderError(`💥 ${err.message}`);
   }
+  //catch (error) {
+  //   console.log(error);
+  //   alert("sorry something went wrong!!!");
+  //   whereAmIBtn.textContent = "Where am I?";
+  // }
 };
 // whereAmI();
 // console.log("First");
 
 whereAmIBtn.addEventListener("click", whereAmI);
+
+// try {
+//   let y = 1;
+//   const x = 3;
+//   x = 4;
+// } catch (err) {
+//   alert(err.message);
+// }
