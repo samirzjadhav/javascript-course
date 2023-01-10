@@ -11,7 +11,7 @@ const formatNumber = function (num) {
   return x.toFixed(2) + units[Math.floor(unit / 3) - 2];
 };
 
-const renderContry = function (data, className = "") {
+const renderCountry = function (data, className = "") {
   const currency = Object.keys(data.currencies)[0];
   const language = Object.values(data.languages)[0];
 
@@ -89,7 +89,7 @@ const getCountryAndNeighbour = function (country) {
     window.data = data;
 
     // Render country 1
-    renderContry(data);
+    renderCountry(data);
 
     // get neighbour country 2
     const [neighbour] = data.borders;
@@ -103,7 +103,7 @@ const getCountryAndNeighbour = function (country) {
     request2.addEventListener("load", function () {
       const [data2] = JSON.parse(this.responseText);
       console.log(data2);
-      renderContry(data2, "neighbour");
+      renderCountry(data2, "neighbour");
     });
   });
 };
@@ -142,7 +142,7 @@ const getCountryData = function (country) {
     })
     .then(function (data) {
       console.log(data);
-      renderContry(data[0]);
+      renderCountry(data[0]);
     });
 };
 */
@@ -165,7 +165,7 @@ const getJSON = function (url, errorMsg = "Something went wrong") {
 //       return response.json();
 //     })
 //     .then((data) => {
-//       renderContry(data[0]);
+//       renderCountry(data[0]);
 //       const neighbour = Object.keys(data[0].borders[0]);
 //       if (!neighbour) return;
 
@@ -173,7 +173,7 @@ const getJSON = function (url, errorMsg = "Something went wrong") {
 //       return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
 //     })
 //     .then((response) =>{if(!response.ok)throw new Error(`Country not found (${response.status})`)} response.json())
-//     .then((data) => renderContry(data, "neighbour"))
+//     .then((data) => renderCountry(data, "neighbour"))
 //     .catch((err) => {
 //       console.error(`${err}💥💥💥💥`);
 //       renderError(`Something went wrong 💥💥💥 ${err} try again!`);
@@ -190,7 +190,7 @@ const getJSON = function (url, errorMsg = "Something went wrong") {
 //     "country not found "
 //   )
 //     .then((data) => {
-//       renderContry(data[0]);
+//       renderCountry(data[0]);
 //       const neighbour = data[0].borders[0];
 //       if (!neighbour) throw new Error("no neighbour found!");
 
@@ -198,7 +198,7 @@ const getJSON = function (url, errorMsg = "Something went wrong") {
 //       // Country 2
 //       getJSON(`https://restcountries.com/v3.1/alpha/${neighbour}`);
 //     })
-//     .then((data) => renderContry(data, "neighbour"))
+//     .then((data) => renderCountry(data, "neighbour"))
 //     .catch((err) => {
 //       console.error(`${err}💥💥💥💥`);
 //       renderError(`Something went wrong 💥💥💥 ${err} try again!`);
@@ -261,7 +261,7 @@ GOOD LUCK 😀
 //       if (!res.ok) throw new Error(`country not found (${res.status})`);
 //       return res.json();
 //     })
-//     .then((data) => renderContry(data[0]))
+//     .then((data) => renderCountry(data[0]))
 //     .catch((err) => console.error(`${err.massage} 💥 `));
 // };
 // whereAmI(52.508, 13.381);
@@ -370,7 +370,7 @@ GOOD LUCK 😀
 //       if (!res.ok) throw new Error(`country not found (${res.status})`);
 //       return res.json();
 //     })
-//     .then((data) => renderContry(data[0]))
+//     .then((data) => renderCountry(data[0]))
 //     .catch((err) => console.error(`${err.massage} 💥 `));
 // };
 // btn.addEventListener("click", whereAmI);
@@ -474,6 +474,7 @@ createImage("img/img-1.jpg")
 
 const whereAmIBtn = document.getElementById("btn");
 
+// Returning Values from Async Functions
 const getPosition = function () {
   return new Promise(function (resolve, reject) {
     navigator.geolocation.getCurrentPosition(resolve, reject);
@@ -482,44 +483,32 @@ const getPosition = function () {
 
 const whereAmI = async function () {
   try {
-    whereAmIBtn.textContent = "loading...";
     // Geolocation
     const pos = await getPosition();
-    console.log(pos);
     const { latitude: lat, longitude: lng } = pos.coords;
 
     // Reverse geocoding
-    const dataGeo = await fetch(
-      `https://geocode.xyz/${lat},${lng}?geoit=json`
-    ).then((res) => res.json());
-    console.log(dataGeo);
-    if (!dataGeo.ok) throw new Error("problem getting country");
+    const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    if (!resGeo.ok) throw new Error("Problem getting location data");
+    const dataGeo = await resGeo.json();
 
     // Country data
-    // fetch(`https://restcountries.com/v3.1/name/${country}`).then((res) =>
-    //   console.log(res)
-    // );
     const res = await fetch(
       `https://restcountries.com/v3.1/name/${dataGeo.country}`
     );
-    if (!res.ok) throw new Error("problem getting country");
+    if (!resGeo.ok) throw new Error("Problem getting country");
     const data = await res.json();
-    renderContry(data[0]);
-    whereAmIBtn.textContent = "Where am I?";
-  } catch (err) {
-    console.log(`${err} 💥`);
-    renderError(`💥 ${err.message}`);
-  }
-  //catch (error) {
-  //   console.log(error);
-  //   alert("sorry something went wrong!!!");
-  //   whereAmIBtn.textContent = "Where am I?";
-  // }
-};
-// whereAmI();
-// console.log("First");
+    renderCountry(data[0]);
 
-whereAmIBtn.addEventListener("click", whereAmI);
+    return `You are in ${dataGeo.city}, ${dataGeo.country}`;
+  } catch (err) {
+    console.error(`${err} 💥`);
+    renderError(`💥 ${err.message}`);
+
+    // Reject promise returned from async function
+    throw err;
+  }
+};
 
 // try {
 //   let y = 1;
@@ -528,3 +517,21 @@ whereAmIBtn.addEventListener("click", whereAmI);
 // } catch (err) {
 //   alert(err.message);
 // }
+
+// RETURNING VALUES FROM ASYNC FUNCTION
+console.log("1: Will get location");
+// const city = whereAmI();
+// console.log(city);
+// whereAmI()
+//   .then((city) => console.log(`2: ${city}`))
+//   .catch((err) => console.error(`2: ${err.message} 💥`))
+//   .finally(() => console.log("3: Finished getting location"));
+(async function () {
+  try {
+    const city = await whereAmI();
+    console.log(`2: ${city}`);
+  } catch (err) {
+    console.error(`2: ${err.message} 💥`);
+  }
+  console.log("3: Finished getting location");
+});
