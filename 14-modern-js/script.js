@@ -87,10 +87,10 @@
 // const { addToCart } = require('./clean.js')
 // */
 
-import cloneDeep from "lodash-es";
+//import cloneDeep from "lodash-es";
 
 // // INTRODUCTION TO NPM
-// import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
+import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
 const state = {
   cart: [
     { product: "bread", quantity: 5 },
@@ -107,3 +107,15 @@ console.log(stateCloneDeep);
 // fetch("http://localhost:1234")
 //   // .then((res) => res.json())
 //   .then((res) => console.log(res.body));
+
+if (module.hot) {
+  module.hot.accept();
+}
+class person {
+  greeting = "Hey";
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.greeting}, ${this.name}`);
+  }
+}
+const samir = new person("samir");
