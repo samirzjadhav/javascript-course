@@ -1,19 +1,20 @@
 {
-  "name": "15-forkify",
+  "name": "forkify",
   "version": "1.0.0",
-  "description": "recipe application",
+  "description": "Recipe Application",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
-  "author": "samir",
+  "author": "Amol Shelke",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.2"
+    "@parcel/transformer-sass": "^2.6.2",
+    "parcel": "^2.6.2"
   },
   "dependencies": {
-    "core-js": "^3.27.1",
-    "parcel": "2",
-    "regenerator-runtime": "^0.13.11"
+    "core-js": "^3.23.2",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.13.9"
   }
 }
